@@ -1,6 +1,7 @@
 //dependencies
 const express = require('express');
 const exphbs = require('express-handlebars');
+require('dotenv').config();
 
 // Initialize the app and create a port
 const app = express();
