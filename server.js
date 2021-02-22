@@ -1,6 +1,7 @@
 //dependencies
 const express = require('express');
 const exphbs = require('express-handlebars');
+const imageRouter = require('./routes/image-routes');
 
 // Initialize the app and create a port
 const app = express();
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
+app.use('/', imageRouter);
 require("./routes/html-routes.js")(app);
 require("./routes/post-api-routes.js")(app);
 
