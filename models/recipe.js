@@ -36,14 +36,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.BOOLEAN,
             allowNull: true,
         },
-        image: {
-            type: DataTypes.STRING(1234),
-            allowNull: true,
-        },
-        image: {
-            type: DataTypes.STRING(1234),
-            allowNull: true,
-        },
         add_to_shopping_list: {
             type: DataTypes.BOOLEAN,
             allowNull: true,
