@@ -1,24 +1,20 @@
 module.exports = (sequelize, DataTypes) => {
     const Recipe = sequelize.define('Recipe', {
         name: {
-            type: DataTypes.STRING(1234),
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         ingredients: {
-            type: DataTypes.STRING(1234),
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         directions: {
-            type: DataTypes.STRING(1234),
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         URL: {
-            type: DataTypes.STRING(1234),
+            type: DataTypes.TEXT,
             allowNull: true,
-        },
-        directions: {
-            type: DataTypes.STRING(1234),
-            allowNull: false,
         },
         vegetarian: {
             type: DataTypes.BOOLEAN,
@@ -39,7 +35,20 @@ module.exports = (sequelize, DataTypes) => {
         add_to_shopping_list: {
             type: DataTypes.BOOLEAN,
             allowNull: true,
-        },
+        }
     });
     return Recipe;
 };
+
+const pizza = await Recipe.create({
+    name: "mushroom pizza",
+    ingredients: "flour, water, salt, oil, cheese, sauce, mushrooms",
+    directions: "make the dough, put the sauce, top it off, then bake that sucker!",
+    URL: "www.pizza.com",
+    vegetarian: true,
+    vegan: false,
+    gluten_free: false
+})
+console.log(pizza instanceof Recipe);
+console.log(pizza.name);
+
