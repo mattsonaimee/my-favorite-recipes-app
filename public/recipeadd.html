@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add Recipes</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+        <link href="assets/css/style.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <a class="navbar-brand" href="#"></a>
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><i class="fa fa-home fa-fw"
+                                    aria-hidden="true"></i>Home Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#"><i class="fa fa-plus"
+                                    aria-hidden="true"></i>Recipe Add Page</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link active" href="recipeview.html"><i class="fa fa-eye" aria-hidden="true"></i>Recipe
+                                view Page</a>
+                        </li>
+                    </ul>
+                    <!-- <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form> -->
+                </div>
+            </div>
+        </nav>
+
+
+
+
+        <div class="container">
+
+            <div class="jumbotron">
+                <h2>Add a recipe</h2>                
+            </div>
+
+
+
+
+            <div class="row">
+
+                <div class="col-lg-12">
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Recipe Search
+                        </div>
+                        <div class="card-body">
+                            <input type="text" id="recipe-search" class="form-control">
+                            <br>
+                            <div class="text-left">
+                                <button type="submit" class="btn btn-outline-primary btn-md" id="search-btn">
+                                    <span class="fa fa-search"></span>Search                                </button>
+                                <br>
+                                <br>
+                                <button type="button" class="btn btn-outline-primary btn-sm">
+                                    <span class="fa fa-eye"></span> View Saved Recipes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-12">
+
+                    <div class="card">
+                        <div class="card-header">
+                            Recipe Details
+                        </div>
+                        <div class="card-body" id="details-section">
+                            <!-- Content will go in here -->
+                        </div>
+                    </div>
+
+                    <a href="/recipeadd" class="btn btn-outline-danger btn-sm">
+                        <span class="fa fa-plus"></span> Add this recipe to my favorites</a>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- end container -->
+        </div>
+
+
+
+
+
+
+
+
+
+    </body>
+
+</html>
