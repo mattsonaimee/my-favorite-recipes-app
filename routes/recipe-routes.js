@@ -27,4 +27,12 @@ module.exports = (app) => {
             },
         }).then((dbRecipe) => res.json(dbRecipe))
     });
+
+    app.put('/api/recipes', (req, res) => {
+        db.Recipe.update(req.body, {
+            where: {
+                id: req.body.id,
+            },
+        }).then((dbRecipe) => res.json(dbRecipe));
+    })
 };
