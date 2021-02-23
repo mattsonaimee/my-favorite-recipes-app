@@ -6,4 +6,6 @@ router.get('/store-image', imageController.imageUploadForm);
 
 router.post('/store-image' , imageController.storeImage);
 
+router.get('/display-image', imageController.displayImage);
+
 module.exports = router;
