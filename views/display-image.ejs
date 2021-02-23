@@ -1,0 +1,25 @@
+!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!-- copied from https://codingstatus.com/ -->
+    <!-- I'm thinking this can be implented directly into the recipeview.html
+    these ejs files are silly af  -->
+    <%
+    if(imagePath.length!=0){
+    imagePath.forEach(function(data){
+    %>
+    <img src="/images/<%=data.image_name; %>" width="200px">
+    
+    <%  }) %>
+    <% } else{ %>
+       
+            <p>No Image in the Database</p>
+        
+    <% } %>
+
+
+</body>
+</html>
