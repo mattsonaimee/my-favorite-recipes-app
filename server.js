@@ -19,7 +19,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
 app.use('/', imageRouter);
 require("./routes/html-routes.js")(app);
-require("./routes/post-api-routes.js")(app);
+require("./routes/image-routes.js")(app);
 
 //listening
 db.sequelize.sync({ force: true }).then(function() {
