@@ -60,3 +60,66 @@ You are required to submit the following:
 * The URL of the deployed application
 
 * The URL of the GitHub repository
+
+
+# Everyday Recipes App
+> TBD general description.
+ 
+## Table of contents
+* [General Info](#general-info)
+* [Technologies](#technologies)
+* [Live Link](#Live-Link)
+* [Code Snippet](#code-snippet)
+* [Sources](#sources)
+* [Contact](#contact)
+
+## General Info
+TBD
+
+## Technologies
+* Javascript
+* HTML/CSS
+* JQuery
+* Node
+* NPM Express
+* NPM Express-Handlebars
+* NPM MySQL
+* NPM Sequelize
+* NPM Multer
+* Heroku
+* MySQL
+* MySQL Workbench
+
+## Live Link
+[Live Link TBD](URL HERE)
+
+## Code Snippets
+
+TBD Code snippet:
+```js
+router.get("/", (req, res) => {
+    burger.selectAll(function(data) {
+        const hbsObject = {
+            burgers: data
+        };
+        console.log('burger_controller console ', hbsObject);
+        res.render("index", hbsObject);
+    })
+});
+```
+
+## Sources
+Application enabled using the following sources:
+
+* [NPM Express](https://www.npmjs.com/package/express)
+* [NPM Express-Handlebars](https://www.npmjs.com/package/express-handlebars)
+* [NPM MySQL](https://www.npmjs.com/package/mysql)
+* [NPM Sequelize](https://www.npmjs.com/package/sequelize)
+* [NPM Multer](https://www.npmjs.com/package/multer)
+
+## Contact
+Created by Sam Rogers - feel free to contact me to collaborate on this project or any other project!
+
+[LinkedIn](https://www.linkedin.com/in/samuelerogers/)
+
+[Portfolio](https://samrogers15.github.io/Current_Portfolio/index.html)
