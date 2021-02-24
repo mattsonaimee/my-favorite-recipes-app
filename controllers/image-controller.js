@@ -1,31 +1,31 @@
-const fs = require("fs");
-const db = require("../models");
+const fs = require('fs');
+const db = require('../models');
 const Image = db.images;
 
-//get and check uploaded file from req.file
+// get and check uploaded file from req.file
 const uploadFiles = async (req, res) => {
   try {
     console.log(req.file);
 
     if (req.file == undefined) {
-      return res.send(`You must select a file.`);
+      return res.send('You must select a file.');
     }
-    //use create mode to save image info
+    // use create mode to save image info
     Image.create({
       type: req.file.mimetype,
       name: req.file.originalname,
-      //get data from images folder
+      // get data from images folder
       data: fs.readFileSync(
-        __basedir + "/public/images" + req.file.filename
-      ),
-      //write file to images folder with name & data
+        __basedir + '/public/images' + req.file.filename
+      )
+      // write file to images folder with name & data
     }).then((image) => {
       fs.writeFileSync(
-        __basedir + "/public/images" + image.name,
+        __basedir + '/public/images' + image.name,
         image.data
       );
 
-      return res.send(`File has been uploaded.`);
+      return res.send('File has been uploaded.');
     });
   } catch (error) {
     console.log(error);
@@ -34,5 +34,5 @@ const uploadFiles = async (req, res) => {
 };
 
 module.exports = {
-  uploadFiles,
+  uploadFiles
 };
