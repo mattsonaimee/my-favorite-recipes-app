@@ -1,6 +1,5 @@
 // dependencies
 const express = require('express');
-const exphbs = require('express-handlebars');
 const imageRouter = require('./routes/image-routes');
 const path = require('path');
 
@@ -14,9 +13,6 @@ const db = require('./models');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// middleware for handlebars
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, '/public')));
 app.use('/', imageRouter);
 require('./routes/html-routes.js')(app);
