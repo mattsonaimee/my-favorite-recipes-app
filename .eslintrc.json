@@ -12,5 +12,7 @@
         "sourceType": "module"
     },
     "rules": {
+     "eol-last": 0,
+     "semi": 0
     }
 }
