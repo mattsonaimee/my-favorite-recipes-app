@@ -1,22 +1,27 @@
-const multer = require('multer');
+//dependencies
+const multer = require("multer");
 
-module.exports.image={
-    storage:function() {
-        const storage = multer.diskStorag({
-            destination: function (req, file, cb) {
-                cb(null, 'public/images/')
-            },
-            filename: function (req, file, cb){
-                cb(null, file.originalname)
-            }
-        })
-        return storage;
-    },
-    allowedImage:function(req, file, cb) {
-        if(!file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
-            req.fileValidatorError = 'Images Only, Please';
-            return cb(new Error('Images Only, Please'), false);
-        }
-        cb(null, true);
-    }
-}
+//this function makes it so only images can be passed into the database
+const imageFilter = (req, file, cb) => {
+  if (file.mimetype.startsWith("image")) {
+    cb(null, true);
+  } else {
+    cb("Please upload only images.", false);
+  }
+};
+
+//use multer disk Storage engine
+let storage = multer.diskStorage({
+    //determines folder to store uploaded files
+  destination: (req, file, cb) => {
+      //may need to change to just /images since public folder is static
+    cb(null, __basedir + "/public/images");
+  },
+  //determines name of file inside destination folder
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}-Everyday-Recipes-${file.originalname}`);
+  },
+});
+
+const uploadFile = multer({ storage: storage, fileFilter: imageFilter });
+module.exports = uploadFile;
