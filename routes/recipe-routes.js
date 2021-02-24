@@ -1,6 +1,7 @@
 const db = require('../models');
 
 module.exports = (app) => {
+
   app.get("/api/recipes", (req, res) => {
     db.Recipe.findAll({
       include: [db.Image],
