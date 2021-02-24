@@ -1,37 +1,38 @@
-//dependencies
-const multer = require('multer');
-const imageMiddleware = require('../middlewares/image-middleware');
-const imageModel = require('../models/image-model');
+const fs = require("fs");
+const db = require("../models");
+const Image = db.images;
 
+//get and check uploaded file from req.file
+const uploadFiles = async (req, res) => {
+  try {
+    console.log(req.file);
+
+    if (req.file == undefined) {
+      return res.send(`You must select a file.`);
+    }
+    //use create mode to save image info
+    Image.create({
+      type: req.file.mimetype,
+      name: req.file.originalname,
+      //get data from images folder
+      data: fs.readFileSync(
+        __basedir + "/public/images" + req.file.filename
+      ),
+      //write file to images folder with name & data
+    }).then((image) => {
+      fs.writeFileSync(
+        __basedir + "/public/images" + image.name,
+        image.data
+      );
+
+      return res.send(`File has been uploaded.`);
+    });
+  } catch (error) {
+    console.log(error);
+    return res.send(`Error when trying upload images: ${error}`);
+  }
+};
 
 module.exports = {
-    imageUploadForm: function (req, res) {
-        const upload = multer({
-            storage: imageMiddleware.image.storage(),
-            allowedImage: imageMiddleware.image.allowedImage
-        })
-            .single('image');
-        upload(req, res, function (err) {
-            if (err instanceof multer.MulterError) {
-                res.send(err);
-            } else if (err) {
-                res.send(err);
-            } else {
-                //stores image in database
-                const imageName = req.file.originalname;
-                const inputValues = {
-                    image_name: imageName
-                }
-                //calls model
-                imageModel.storeImage(inputValues, function (data) {
-                    res.render('upload-form', { alertMsg: data })
-                })
-            }
-        })
-    },
-    displayImage: function (req, res) {
-        imageModel.displayImage(function (data) {
-            res.render('display-image', { imagePath: data })
-        })
-    }
-}
+  uploadFiles,
+};
