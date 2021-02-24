@@ -1,3 +1,6 @@
+const { Sequelize, Model, DataTypes } = require("sequelize");
+const sequelize = new Sequelize("sqlite::memory:");
+
 module.exports = (sequelize, DataTypes) => {
     const Recipe = sequelize.define('Recipe', {
         name: {
@@ -39,6 +42,11 @@ module.exports = (sequelize, DataTypes) => {
     });
     return Recipe;
 };
+
+(async () => {
+    await sequelize.sync({ force: true });
+    // Code here
+  })();
 
 const pizza = await Recipe.create({
     name: "mushroom pizza",
