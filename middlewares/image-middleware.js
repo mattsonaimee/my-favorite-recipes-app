@@ -1,5 +1,3 @@
-/* eslint-disable node/no-callback-literal */
-// dependencies
 const multer = require('multer');
 
 // this function makes it so only images can be passed into the database
@@ -7,6 +5,7 @@ const imageFilter = (req, file, cb) => {
   if (file.mimetype.startsWith('image')) {
     cb(null, true);
   } else {
+    // eslint-disable-next-line node/no-callback-literal
     cb('Please upload only images.', false);
   }
 };
@@ -17,8 +16,7 @@ const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     // may need to change to just /images since public folder is static
     // eslint-disable-next-line no-undef
-    // eslint-disable-next-line node/no-path-concat
-    cb(null, __dirname + '/public/images/uploads/');
+    cb(null, __basedir + '/public/images/uploads/');
   },
   // determines name of file inside destination folder
   filename: (req, file, cb) => {

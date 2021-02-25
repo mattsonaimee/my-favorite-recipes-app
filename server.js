@@ -1,6 +1,5 @@
 // dependencies
 const express = require('express');
-const imageRouter = require('./routes/image-routes');
 const path = require('path');
 
 // Initialize the app and create a port
@@ -16,8 +15,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, '/public')));
-app.use('/', imageRouter);
+
 require('./routes/html-routes.js')(app);
+require('./routes/recipe-routes.js')(app);
 require('./routes/image-routes.js')(app);
 
 // listening

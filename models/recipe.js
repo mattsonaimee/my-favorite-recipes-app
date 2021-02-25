@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Recipe = sequelize.define("Recipe", {
+  const Recipe = sequelize.define('Recipe', {
 
     name: {
       type: DataTypes.TEXT,
@@ -39,7 +39,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
   return Recipe;
-
 };
 
 // (async () => {
@@ -58,6 +57,4 @@ module.exports = (sequelize, DataTypes) => {
 // })
 // console.log(pizza instanceof Recipe);
 // console.log(pizza.name);
-=======
-};
-
+// };
