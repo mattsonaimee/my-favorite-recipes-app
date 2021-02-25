@@ -113,16 +113,22 @@
                     </div>
                     <div class="card-body" id="details-section">
                         <form action="/store-image" method="POST" enctype="multipart/form-data">
-                            <input type="file" name="file"
-                            id="input-files"
-                            class="form-control-file border">
-                            <button type="submit">Upload</button>
+                            <div class="form-group">
+                                <input
+                                  type="file"
+                                  name="file"
+                                  id="input-files"
+                                  class="form-control-file border"
+                                />
+                              </div>
+                              <button type="submit" class="btn btn-primary">Upload</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-
+        <div class="preview-images">
+        </div>
 
 
 
