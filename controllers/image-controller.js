@@ -1,13 +1,14 @@
+/* eslint-disable no-undef */
 const fs = require('fs');
 const db = require('../models');
-const Image = db.images;
+const Image = db.image;
 
 // get and check uploaded file from req.file
 const uploadFiles = async (req, res) => {
   try {
     console.log(req.file);
 
-    if (req.file == undefined) {
+    if (req.file === undefined) {
       return res.send('You must select a file.');
     }
     // use create mode to save image info
@@ -16,12 +17,12 @@ const uploadFiles = async (req, res) => {
       name: req.file.originalname,
       // get data from images folder
       data: fs.readFileSync(
-        __basedir + '/public/images' + req.file.filename
+        __basedir + '/public/images/uploads/' + req.file.filename
       )
       // write file to images folder with name & data
     }).then((image) => {
       fs.writeFileSync(
-        __basedir + '/public/images' + image.name,
+        __basedir + '/public/images/temp/' + image.name,
         image.data
       );
 
