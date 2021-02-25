@@ -1,5 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
   const Recipe = sequelize.define("Recipe", {
+
     name: {
       type: DataTypes.TEXT,
       allowNull: false
@@ -38,4 +39,25 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
   return Recipe;
+
 };
+
+// (async () => {
+//     await sequelize.sync({ force: true });
+//     // Code here
+//   })();
+
+// const pizza = await Recipe.create({
+//     name: "mushroom pizza",
+//     ingredients: "flour, water, salt, oil, cheese, sauce, mushrooms",
+//     directions: "make the dough, put the sauce, top it off, then bake that sucker!",
+//     URL: "www.pizza.com",
+//     vegetarian: true,
+//     vegan: false,
+//     gluten_free: false
+// })
+// console.log(pizza instanceof Recipe);
+// console.log(pizza.name);
+=======
+};
+
