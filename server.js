@@ -9,6 +9,8 @@ const PORT = process.env.PORT || 8080;
 
 const db = require('./models');
 
+global.__basedir = __dirname;
+
 // Set up body parsing, static, and route middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
