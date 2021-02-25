@@ -1,3 +1,4 @@
+/* eslint-disable node/no-callback-literal */
 // dependencies
 const multer = require('multer');
 
@@ -11,16 +12,18 @@ const imageFilter = (req, file, cb) => {
 };
 
 // use multer disk Storage engine
-let storage = multer.diskStorage({
+const storage = multer.diskStorage({
   // determines folder to store uploaded files
   destination: (req, file, cb) => {
     // may need to change to just /images since public folder is static
-    cb(null, __basedir + '/public/images');
+    // eslint-disable-next-line no-undef
+    // eslint-disable-next-line node/no-path-concat
+    cb(null, __dirname + '/public/images/uploads/');
   },
   // determines name of file inside destination folder
   filename: (req, file, cb) => {
     cb(null, `${Date.now()}-Everyday-Recipes-${file.originalname}`);
-  },
+  }
 });
 
 const uploadFile = multer({ storage: storage, fileFilter: imageFilter });
