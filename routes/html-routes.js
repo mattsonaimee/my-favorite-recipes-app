@@ -2,7 +2,7 @@
 const path = require('path');
 
 // Requiring our custom middleware for checking if a user is logged in
-const isAuthenticated = require('../config/middlewares/isAuthenticated');
+const isAuthenticated = require('../config/middleware/isAuthenticated');
 
 module.exports = (app) => {
   // Each of the below routes just handles the HTML page that the user gets sent to.
@@ -19,7 +19,7 @@ module.exports = (app) => {
   // login route loads login.html
   app.get('/login', (req, res) => {
     if (req.user) {
-      res.redirect('./app');
+      res.redirect('/app');
     }
     res.sendFile(path.join(__dirname, '../public/login.html'))
   });

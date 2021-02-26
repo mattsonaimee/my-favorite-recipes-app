@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 $(document).ready(function () {
   // Getting references to our form and inputs
   const loginForm = $('form.login');
@@ -29,7 +30,7 @@ $(document).ready(function () {
       password: password
     })
       .then(function () {
-        window.location.replace('/members');
+        window.location.replace('/app');
         // If there's an error, log the error
       })
       .catch(function (err) {

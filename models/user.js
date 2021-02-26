@@ -24,18 +24,20 @@ module.exports = (sequelize, DataTypes) => {
     },
     updatedAt: {
       type: DataTypes.DATE(3),
-      defaultValue: sequelize.literal('CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)')
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP(3)')
     }
   });
 
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
-  User.prototype.validPassword = (password) => {
+  User.prototype.validPassword = function (password) {
+    console.log(password);
+    console.log(this.password);
     return bcrypt.compareSync(password, this.password);
   };
 
   // Hooks are automatic methods that run during various phases of the User Model lifecycle
   // In this case, before a User is created, we will automatically hash their password
-  User.addHook('beforeCreate', (user) => {
+  User.addHook('beforeCreate', function (user) {
     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
   });
 
