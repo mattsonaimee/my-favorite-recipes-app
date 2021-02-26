@@ -4,7 +4,10 @@ module.exports = (app) => {
   app.get('/api/recipes', (req, res) => {
     db.Recipe.findAll({
       include: [db.Image]
-    }).then((dbRecipe) => res.json(dbRecipe));
+    }).then((dbRecipe) => {
+      console.log(`Here is the DB Recipe ${dbRecipe}`);
+      res.json(dbRecipe)
+    });
   });
 
   app.get('/api/recipes/:id', (req, res) => {
