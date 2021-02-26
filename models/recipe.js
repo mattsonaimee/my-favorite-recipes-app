@@ -46,6 +46,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
 
+  // We're saying that a Recipe should belong to a User
+  // A Recipe can't be created without a User due to the foreign key constraint
   Recipe.associate = (models) => {
     Recipe.belongsTo(models.User, {
       foreignKey: {
@@ -53,6 +55,9 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: null
       }
     })
+
+    // Associating Recipe with Images
+    // When a Recipe is deleted, also delete any associated Images
     Recipe.hasMany(models.Image, {
       onDelete: 'cascade'
     })

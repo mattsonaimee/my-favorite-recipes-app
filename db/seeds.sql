@@ -1,7 +1,7 @@
 USE recipes_db;
 
-INSERT INTO users (username)
-VALUES ('Frank');
+INSERT INTO users (email, password)
+VALUES ('samrogers15@gmail.com', 'password2');
 
 INSERT INTO recipes
     (name, ingredients, directions, URL, vegetarian, vegan, gluten_free, favorite_recipe, add_to_shopping_list)
