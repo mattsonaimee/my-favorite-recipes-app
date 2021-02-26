@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '/public')));
 
 require('./routes/html-routes.js')(app);
+require('./routes/user-routes.js')(app);
 require('./routes/recipe-routes.js')(app);
 require('./routes/image-routes.js')(app);
 
