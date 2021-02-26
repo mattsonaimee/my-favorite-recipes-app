@@ -5,6 +5,7 @@ module.exports = (app) => {
     const query = {};
     if (req.query.user_id) {
       query.UserId = req.query.user_id;
+      console.log(query.UserId);
     }
     db.Recipe.findAll({
       where: query,
