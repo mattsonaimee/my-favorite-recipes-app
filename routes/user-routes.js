@@ -1,4 +1,3 @@
-// const db = require('../models');
 
 module.exports = (app) => {
   app.get('/api/users', (req, res) => {
@@ -25,7 +24,6 @@ module.exports = (app) => {
       }
     }).then((dbUsers) => res.json(dbUsers));
   });
-}
 // Requiring our models and passport as we've configured it
 const db = require('../models');
 const passport = require('../config/passport');
