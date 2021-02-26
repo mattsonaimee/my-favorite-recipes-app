@@ -35,13 +35,22 @@ module.exports = (sequelize, DataTypes) => {
     add_to_shopping_list: {
       type: DataTypes.BOOLEAN,
       allowNull: true
+    },
+    createdAt: {
+      type: DataTypes.DATE(3),
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP(3)')
+    },
+    updatedAt: {
+      type: DataTypes.DATE(3),
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)')
     }
   });
 
   Recipe.associate = (models) => {
     Recipe.belongsTo(models.User, {
       foreignKey: {
-        allowNull: false
+        allowNull: true,
+        defaultValue: null
       }
     })
     Recipe.hasMany(models.Image, {
