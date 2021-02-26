@@ -8,7 +8,7 @@ module.exports = (app) => {
     }
     db.Recipe.findAll({
       where: query,
-      include: [db.Image]
+      include: [db.User, db.Image]
     }).then((dbRecipe) => {
       console.log(`Here is the findAll DB Recipe ${dbRecipe}`);
       res.json(dbRecipe)
@@ -20,7 +20,7 @@ module.exports = (app) => {
       where: {
         id: req.params.id
       },
-      include: [db.Image]
+      include: [db.User, db.Image]
     }).then((dbRecipe) => {
       console.log(`Here is the findOne DB Recipe ${dbRecipe}`);
       res.json(dbRecipe)
@@ -29,7 +29,7 @@ module.exports = (app) => {
 
   app.post('/api/recipes', (req, res) => {
     db.Recipe.create(req.body).then((dbRecipe) => {
-      console.log(`Here is the Create DB Recipe ${dbRecipe}`);
+      console.log(`Here is the Delete DB Recipe ${dbRecipe}`);
       res.json(dbRecipe)
     });
   });
