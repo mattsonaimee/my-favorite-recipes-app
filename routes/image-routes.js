@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const homeController = require('../controllers/home');
 const uploadController = require('../controllers/image-controller');
-const uploadMid = require('../middlewares/image-middleware');
+const uploadMid = require('../config/middleware/image-middleware');
 
 // eslint-disable-next-line prefer-const
 let routes = (app) => {

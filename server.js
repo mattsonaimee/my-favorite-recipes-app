@@ -1,28 +1,36 @@
 // dependencies
 const express = require('express');
+const session = require('express-session');
+const passport = require('./config/passport');
 const path = require('path');
 
-// Initialize the app and create a port
-const app = express();
+// Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
-
 const db = require('./models');
 
-global.__basedir = __dirname;
-
-// Set up body parsing, static, and route middleware
-app.use(express.json());
+// Creating express app and configuring middleware needed for authentication
+const app = express();
 app.use(express.urlencoded({ extended: true }));
-
+app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
+// We need to use sessions to keep track of our user's login status
+app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Necessary directory establishment for NPM Multer
+global.__basedir = __dirname;
+
+// Requiring our routes
 require('./routes/html-routes.js')(app);
+require('./routes/user-routes.js')(app);
 require('./routes/recipe-routes.js')(app);
 require('./routes/image-routes.js')(app);
 
 // listening
 db.sequelize.sync({ force: true }).then(function () {
   app.listen(PORT, function () {
-    console.log('App listening on PORT ' + PORT);
+    console.log('Listening on port %s. Visit http://localhost:%s/ in your browser.', PORT, PORT);
   });
 });
