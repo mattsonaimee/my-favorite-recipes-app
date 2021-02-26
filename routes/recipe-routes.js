@@ -2,10 +2,15 @@ const db = require('../models');
 
 module.exports = (app) => {
   app.get('/api/recipes', (req, res) => {
+    const query = {};
+    if (req.query.user_id) {
+      query.UserId = req.query.user_id;
+    }
     db.Recipe.findAll({
+      where: query,
       include: [db.Image]
     }).then((dbRecipe) => {
-      console.log(`Here is the DB Recipe ${dbRecipe}`);
+      console.log(`Here is the findAll DB Recipe ${dbRecipe}`);
       res.json(dbRecipe)
     });
   });
@@ -16,11 +21,17 @@ module.exports = (app) => {
         id: req.params.id
       },
       include: [db.Image]
-    }).then((dbRecipe) => res.json(dbRecipe));
+    }).then((dbRecipe) => {
+      console.log(`Here is the findOne DB Recipe ${dbRecipe}`);
+      res.json(dbRecipe)
+    });
   });
 
   app.post('/api/recipes', (req, res) => {
-    db.Recipe.create(req.body).then((dbRecipe) => res.json(dbRecipe));
+    db.Recipe.create(req.body).then((dbRecipe) => {
+      console.log(`Here is the Create DB Recipe ${dbRecipe}`);
+      res.json(dbRecipe)
+    });
   });
 
   app.delete('/api/recipes/:id', (req, res) => {
@@ -28,7 +39,10 @@ module.exports = (app) => {
       where: {
         id: req.params.id
       }
-    }).then((dbRecipe) => res.json(dbRecipe));
+    }).then((dbRecipe) => {
+      console.log(`Here is the Delete DB Recipe ${dbRecipe}`);
+      res.json(dbRecipe)
+    });
   });
 
   app.put('/api/recipes', (req, res) => {
@@ -36,6 +50,9 @@ module.exports = (app) => {
       where: {
         id: req.body.id
       }
-    }).then((dbRecipe) => res.json(dbRecipe));
+    }).then((dbRecipe) => {
+      console.log(`Here is the Update DB Recipe ${dbRecipe}`);
+      res.json(dbRecipe)
+    });
   });
 };
