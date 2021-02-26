@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 const fs = require('fs');
 const db = require('../models');
-const Image = db.image;
-
+const Image = db.Image;
+console.log(db.Image);
 // get and check uploaded file from req.file
 const uploadFiles = async (req, res) => {
   try {

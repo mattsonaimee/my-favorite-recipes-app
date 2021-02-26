@@ -13,7 +13,9 @@ module.exports = (sequelize, DataTypes) => {
 
   Image.associate = (models) => {
     Image.belongsTo(models.Recipe, {
-      foreignKey: false
+      foreignKey: {
+        allowNull: false
+      }
     });
   };
 
