@@ -1,136 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Recipes</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Everyday recipes | Add Recipes</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-        crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+            integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+            crossorigin="anonymous" />
 
-    <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet">
+        <script defer src="./assets/js/recipeadd.js"></script>
 
-</head>
+    </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarsExampleDefault"
-            aria-controls="navbarsExampleDefault" " aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">              
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="app.html"><i class="fa fa-home fa-fw"
-                              ></i>Home Page</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="recipeadd.html">Recipe
-                            Add Page</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Recipe
-                            view Page</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Login Page</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="signup.html">Sign Up Page</a>
-                    </li>
-                </ul>
-                <!-- <form class="d-flex">
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded=" false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="app.html"><i class="fa fa-home fa-fw"></i>Home Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="recipeadd.html">Recipe
+                                Add Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Recipe
+                                view Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="signup.html">Sign Up Page</a>
+                        </li>
+                    </ul>
+                    <!-- <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form> -->
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
 
 
 
-    <div class="container">
+        <div class="container">
 
-        <div class="jumbotron">
-            <h2>Add a recipe</h2>
-        </div>
-
-
+            <div class="jumbotron">
+                <h2>Add a recipe</h2>
+            </div>
 
 
-        <div class="row">
 
-            <div class="col-lg-12">
 
-                <div class="card mb-4">
-                    <div class="card-header">
-                        Recipe Search
-                    </div>
-                    <div class="card-body">
-                        <input type="text" id="recipe-search" class="form-control">
-                        <br>
-                        <div class="text-left">
-                            <button type="submit" class="btn btn-outline-primary btn-md" id="search-btn">
-                                <span class="fa fa-search"></span>Search </button>
+            <div class="row">
+
+                <div class="col-lg-12">
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Recipe Search
+                        </div>
+                        <div class="card-body">
+                            <input type="text" id="recipe-search" class="form-control">
                             <br>
-                            <br>
-                            <button type="button" class="btn btn-outline-primary btn-sm">
-                                <span class="fa fa-eye"></span> View Saved Recipes</button>
+                            <div class="text-left">
+                                <button type="submit" class="btn btn-outline-primary btn-md" id="search-btn">
+                                    <span class="fa fa-search"></span>Search </button>
+                                <br>
+                                <br>
+                                <button type="button" class="btn btn-outline-primary btn-sm">
+                                    <span class="fa fa-eye"></span> View Saved Recipes</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
+            <div class="row">
 
-            <div class="col-lg-12">
+                <div class="col-lg-12">
 
-                <div class="card">
-                    <div class="card-header">
-                        Recipe Details
+                    <div class="card">
+                        <div class="card-header">
+                            Recipe Details
+                        </div>
+                        <div class="card-body" id="details-section">
+                            <!-- Content will go in here -->
+                        </div>
                     </div>
-                    <div class="card-body" id="details-section">
-                        <!-- Content will go in here -->
-                    </div>
+
+                    <a href="/recipeadd" class="btn btn-outline-danger btn-sm">
+                        <span class="fa fa-plus"></span> Add this recipe to my favorites</a>
                 </div>
 
-                <a href="/recipeadd" class="btn btn-outline-danger btn-sm">
-                    <span class="fa fa-plus"></span> Add this recipe to my favorites</a>
             </div>
 
-        </div>
-
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-header">
-                        Upload an image
-                    </div>
-                    <div class="card-body" id="details-section">
-                        <form action="/store-image" method="POST" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <input
-                                  type="file"
-                                  name="file"
-                                  id="input-files"
-                                  class="form-control-file border"
-                                />
-                              </div>
-                              <button type="submit" class="btn btn-primary">Upload</button>
-                        </form>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Upload an image
+                        </div>
+                        <div class="card-body" id="details-section">
+                            <form action="/store-image" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <input type="file" name="file" id="input-files" class="form-control-file border" />
+                                </div>
+                                <button type="submit" class="btn btn-primary">Upload</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="preview-images">
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- end container -->
         </div>
-        <div class="preview-images">
-        </div>
 
 
 
@@ -140,28 +158,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-        <!-- end container -->
-    </div>
-
-
-
-
-
-
-
-
-
-</body>
+    </body>
 
 </html>
