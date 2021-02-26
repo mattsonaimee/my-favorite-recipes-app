@@ -44,6 +44,9 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       }
     })
+    Recipe.hasMany(models.Image, {
+      onDelete: 'cascade'
+    })
   };
 
   return Recipe;
