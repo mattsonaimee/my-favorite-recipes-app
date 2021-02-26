@@ -10,5 +10,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BLOB('long')
     }
   });
+
+  Image.associate = (models) => {
+    Image.belongsTo(models.Recipe, {
+      foreignKey: false
+    });
+  };
+
   return Image;
 };
