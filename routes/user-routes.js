@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const db = require('../models');
 
 module.exports = (app) => {
@@ -26,7 +25,6 @@ module.exports = (app) => {
       }
     }).then((dbUsers) => res.json(dbUsers));
   });
-=======
 // Requiring our models and passport as we've configured it
 const db = require('../models');
 const passport = require('../config/passport');
@@ -117,5 +115,4 @@ module.exports = (app) => {
 //       res.json(dbUser);
 //     });
 //   });
->>>>>>> 03f27f84a12dee5b36bf1bd7a39d2a0bb95e29f9
 };
