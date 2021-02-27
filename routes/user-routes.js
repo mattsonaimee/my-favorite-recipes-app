@@ -77,15 +77,4 @@ module.exports = (app) => {
       res.json(dbUser);
     });
   });
-
-//   app.put('/api/users', (req, res) => {
-//     db.User.update(req.body, {
-//       where: {
-//         id: req.body.id
-//       }
-//     }).then((dbUser) => {
-//       console.log(`Here is the Update DB User ${dbUser}`);
-//       res.json(dbUser);
-//     });
-//   });
 };
