@@ -38,7 +38,7 @@ $(document).ready(function () {
   }
 
   function handleLoginErr (err) {
-    $('#alert .msg').text(err.responseJSON);
+    $('#alert .msg').text('Email Invalid');
     console.log(err.responseJSON);
     $('#alert').fadeIn(500);
   }
