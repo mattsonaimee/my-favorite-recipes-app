@@ -30,7 +30,7 @@ module.exports = (app) => {
 
   app.post('/api/recipes', (req, res) => {
     db.Recipe.create(req.body).then((dbRecipe) => {
-      console.log(`Here is the Delete DB Recipe ${dbRecipe}`);
+      console.log(`Here is the Create DB Recipe ${dbRecipe}`);
       res.json(dbRecipe)
     });
   });

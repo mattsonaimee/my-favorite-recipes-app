@@ -51,8 +51,7 @@ module.exports = (sequelize, DataTypes) => {
   Recipe.associate = (models) => {
     Recipe.belongsTo(models.User, {
       foreignKey: {
-        allowNull: true,
-        defaultValue: null
+        allowNull: false
       }
     })
 
