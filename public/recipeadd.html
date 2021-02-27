@@ -72,14 +72,7 @@
                             Recipe Search
                         </div>
                         <div class="card-body">
-                            <input type="text" id="recipe-search" class="form-control">
-                            <br>
-                            <div class="text-left">
-                                <button type="submit" class="btn btn-outline-primary btn-md" id="search-btn">
-                                    <span class="fa fa-search"></span>Search </button>
-                                <br>
-                                <br>
-                                <button type="button" class="btn btn-outline-primary btn-sm">
+                                 <button type="button" class="btn btn-outline-primary btn-sm">
                                     <span class="fa fa-eye"></span> View Saved Recipes</button>
                             </div>
                         </div>
@@ -101,7 +94,7 @@
                                 Recipe
                             </div>
                             <div class="card-body" id="details-section">
-                                <form class="add-recipe">
+                                <form class="add-recipe" id="add-recipe">
                                     <div class="form-group">
                                         <label for="recipe-name">Recipe Name</label>
                                         <input type="name" class="form-control" id="recipe-name"
@@ -121,21 +114,19 @@
                                         <label for="url">URL</label>
                                         <input type="text" class="form-control" id="url" placeholder="URL">
                                     </div>
-                                    <input type="radio" id="vegetarian" name="vegetarian" value="vegetarian"
-                                        data-value="false">
+                                    <input type="radio" id="vegetarian" name="vegetarian" value="vegetarian" data-value="false">
                                     <label for="vegetarian">Vegetarian</label><br>
                                     <input type="radio" id="vegan" name="vegan" value="vegan">
                                     <label for="vegan">Vegan</label><br>
                                     <input type="radio" id="gluten-free" name="gluten-free" value="gluten-free">
                                     <label for="gluten-free">Gluten Free</label><br>
-                                    <input type="radio" id="favorite-recipe" name="favorite-recipe"
-                                        value="favorite-recipe">
-                                    <label for="other">Favorite Recipe</label><br>
+                                    <input type="radio" id="favorite-recipe" name="favorite-recipe" value="favorite-recipe">
+                                    <label for="favorite-recipe">Favorite Recipe</label><br>
                                     <input type="radio" id="shopping-list" name="shopping-list" value="shopping-list">
                                     <label for="other">Add to Shopping List</label><br>
-                                    <a href="/recipeadd" class="btn btn-outline-danger btn-sm">
+                                    <button type="submit" class="btn btn-outline-danger btn-sm submit">
                                         <span class="fa fa-plus"></span> Add this recipe to my favorites
-                                    </a>
+                                    </button>
                                 </form>
                             </div>
                         </div>
