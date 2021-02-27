@@ -1,132 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Everyday Recipes</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Everyday Recipes | Home</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-        crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+            integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+            crossorigin="anonymous" />
+            
 
-    <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet">
+     
 
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/55d3b7ba4c.js" crossorigin="anonymous"></script>
+        <script defer src="./assets/js/app.js"></script>
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand" href="#"></a>
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-home fa-fw"
-                                aria-hidden="true"></i>Home Page</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="recipeadd.html"><i class="fa fa-plus" aria-hidden="true"></i>Recipe
-                            Add Page</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="recipeadd.html"><i class="fa fa-eye" aria-hidden="true"></i>Recipe
-                            view Page</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-
-    <div class="container">
-        <div class="jumbotron">
-            <div class="row">
-                <div class="column-3">
-                    <div class="logo">
-                        <h1>Everyday Recipes</h1>
-                        <p>A place for all the delicious recipes you love. </p>
-                    </div>
-                    <div class="column-9">
-                        <img class="img-fluid rounded float-right" id="cookImage" src="images/meals colage.png"
-                            width="900" height="600">
-                    </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded=" false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa fa-home fa-fw"></i>Home Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="recipeadd.html">Recipe
+                                Add Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="recipeview.html">Recipe
+                                view Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="signup.html">Sign Up Page</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </nav>
 
 
-            <div class="row">
-                <div class="col-lg-12" id="cooking-label">
-                    <h1>Let's Get cooking!</h1>
-                    <div class="card mb-4">
-                        <div class="card-header" id="search-text">
-                            Recipe Search
+        <div class="container container-fluid">
+            <div class="jumbotron">
+                <div class="row">
+                    <div class="column-3">
+                        <div class="logo">
+                            <h1>Everyday Recipes</h1>
+                            <p>A place for all the delicious recipes you love. </p>
                         </div>
-                        <div class="card-body">
-                            <input type="text" id="recipe-search" class="form-control">
-                            <br>
-                            <div class="text-left">
-                                <button type="submit" class="btn btn-outline-primary btn-md" id="search-btn">
-                                    <span class="fa fa-search"></span> A delicious recipe is just a click away...
-                                </button>
-                                <br>
-                                <br>
-                                <button type="button" class="btn btn-outline-primary btn-sm">
-                                    <span class="fa fa-eye"></span> View Saved Recipes</button>
-                            </div>
-                            <h2>Welcome to "name of app"</h2>
-                            <br>
-                            <small class="text-secondary">A recipe has no soul. You as the cook must bring soul to the
-                                recipe.”<br>-
-                                Thomas Keller
-                            </small>
-                        </div>
-
-                        <div class="three-column-footer-contact-form-container">
-                            <footer class="three-column-footer-contact-form" data-equalizer data-equalize-by-row="true">
-                                <div class="footer-left" data-equalizer-watch>
-                                    <div class="baseline">
-                                        <div class="contact-details">
-                                            <h6>Contact details</h6>
-                                            <p><i class="fa fa-phone fa-lg" aria-hidden="true"></i> 01234 567890</p>
-                                            <p><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact
-                                                    us</a></p>
-                                            <p><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> Street, City,
-                                                County,
-                                                Country
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer-right" data-equalizer-watch>
-                                    <div class="baseline">
-                                        <div class="newsletter">
-                                            <div class="input-group">
-                                                <h6>Sign up for our newsletter</h6>
-                                                <input class="input-group-field" type="email"
-                                                    placeholder="Email address">
-                                                <button class="button" href="#">Submit</button>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </footer>
+                        <div class="column-9">
+                            <img class="img-fluid rounded float-right" id="cookImage" src="images/meals colage.png"
+                                width="900" height="600">
                         </div>
                     </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-lg-12" id="cooking-label">
+                        <h1>Let's Get cooking!</h1>
+                        <div class="card mb-4">
+                            <div class="card-header" id="search-text">
+                                Recipe Search
+                            </div>
+                            <div class="card-body">
+                                <input type="text" id="recipe-search" class="form-control">
+                                <br>
+                                <div class="text-left">
+                                    <button type="submit" class="btn btn-outline-primary btn-md" id="search-btn">
+                                        <span class="fa fa-search"></span> A delicious recipe is just a click away...
+                                    </button>
+                                    <br>
+                                    <br>
+                                    <button type="button" class="btn btn-outline-primary btn-sm">
+                                        <span class="fa fa-eye"></span> View Saved Recipes</button>
+                                </div>
+                                <h2>Welcome to "name of app"</h2>
+                                <br>
+                                <small class="text-secondary">A recipe has no soul. You as the cook must bring soul to
+                                    the
+                                    recipe.”<br>-
+                                    Thomas Keller
+                                </small>
+                            </div>
+
+                        
+                        </div>
 
 
 
 
-</body>
+    </body>
 
 </html>

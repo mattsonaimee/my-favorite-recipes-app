@@ -1,55 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Everyday Recipes</title>
+    <title>Everyday Recipes | SignUp</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-        crossorigin="anonymous" />
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous" />
 
     <link href="assets/css/style.css" rel="stylesheet">
 
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/55d3b7ba4c.js" crossorigin="anonymous"></script>
     <script defer src="./assets/js/signup.js"></script>
 
-</head>
+  </head>
 
-<body>
+  <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand" href="#"></a>
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-home fa-fw"
-                                aria-hidden="true"></i>Home Page</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="recipeadd.html"><i class="fa fa-plus" aria-hidden="true"></i>Recipe
-                            Add Page</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="recipeadd.html"><i class="fa fa-eye" aria-hidden="true"></i>Recipe
-                            view Page</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarsExampleDefault"
+          aria-controls="navbarsExampleDefault" aria-expanded=" false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="app.html"><i class="fa fa-home fa-fw"></i>Home Page</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="recipeadd.html">Recipe
+                Add Page</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="recipeview.html">Recipe
+                view Page</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Login Page</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign Up Page</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
 
-    <div class="container">
+    <div class="container container-fluid">
+      <div class="jumbotron">
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
             <h2>Sign Up Form</h2>
@@ -72,7 +78,25 @@
             <p>Or log in <a href="./login.html">here</a></p>
           </div>
         </div>
+        <div class="row">
+        </div>
+        <div class="row">
+          <div class="footer-center" data-equalizer-watch>
+            <div class="baseline">
+              <div class="newsletter">
+                <div class="input-group">
+                  <h6>Sign up for our newsletter</h6>
+                  <input class="input-group-field" type="email" placeholder="Email address">
+                  <button class="button" href="#">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+
+
+  </body>
 
 </html>
