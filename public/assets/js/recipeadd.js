@@ -10,11 +10,11 @@ $(function () {
   const ingredientsInput = $('#ingredients');
   const directionsInput = $('#directions');
   const urlInput = $('#url');
-  const vegetarianInput = $('#vegetarian:checked');
-  const veganInput = $('#vegan:checked');
-  const glutenInput = $('#gluten-free:checked');
-  const favoriteRecipeInput = $('#favorite-recipe:checked');
-  const shoppingListInput = $('shopping-list:checked');
+  const vegetarianInput = $('#vegetarian');
+  const veganInput = $('#vegan');
+  const glutenInput = $('#gluten-free');
+  const favoriteRecipeInput = $('#favorite-recipe');
+  const shoppingListInput = $('#shopping-list');
 
   // Get query parameter
   const url = window.location.search;
@@ -26,7 +26,6 @@ $(function () {
   const getRecipeData = (id, type) => {
     const queryUrl =
       type === 'recipe' ? `/api/recipes/${id}` : `/api/users/${id}`;
-
     fetch(queryUrl, {
       method: 'GET',
       headers: {
@@ -49,9 +48,7 @@ $(function () {
           favoriteRecipeInput.val() = data.favorite_recipe;
           shoppingListInput.val() = data.add_to_shopping_list;
           // eslint-disable-next-line no-unused-vars
-          userId = data.UserId;
-
-          console.log(data);
+          userId = data.UserId || data.id;
 
           // We are updating
           updating = true;
@@ -77,7 +74,9 @@ $(function () {
       !directionsInput.val() ||
       !urlInput.val()
     ) {
-      alert(`You must enter a value for 'Name', 'Ingredients', 'Directions', and 'URL'!`);
+      alert(
+        `You must enter a value for 'Name', 'Ingredients', 'Directions', and 'URL'!`
+      );
     }
 
     // Object that will be sent to the db
@@ -86,14 +85,15 @@ $(function () {
       ingredients: ingredientsInput.val().trim(),
       directions: directionsInput.val().trim(),
       URL: urlInput.val().trim(),
-      vegetarian: vegetarianInput.val(),
-      vegan: veganInput.val(),
-      gluten_free: glutenInput.val(),
-      favorite_recipe: favoriteRecipeInput.val(),
-      add_to_shopping_list: shoppingListInput.val(),
+      vegetarian: vegetarianInput.prop('checked'),
+      vegan: veganInput.prop('checked'),
+      gluten_free: glutenInput.prop('checked'),
+      favorite_recipe: favoriteRecipeInput.prop('checked'),
+      add_to_shopping_list: shoppingListInput.prop('checked')
       // may need to declare data/recipe earlier to use here
-      // UserId: recipe.UserId
+      // UserId: userId
     };
+
     console.log(newRecipe);
 
     // Update a post if flag is true, otherwise submit a new one
@@ -123,7 +123,6 @@ $(function () {
       .catch((err) => console.error(err));
   };
 
-
   // Update a recipe then redirect to view recipes
   const updateRecipe = (recipe) => {
     fetch('/api/recipes', {
@@ -138,7 +137,6 @@ $(function () {
       })
       .catch((err) => console.error(err));
   };
-
 
   const imagesPreview = function (input, placeToInsertImagePreview) {
     if (input.files) {
