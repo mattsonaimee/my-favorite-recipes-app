@@ -60,7 +60,7 @@ $(function () {
 
     recipes.forEach((recipe) => recipesToAdd.push(createNewRecipe(recipe)));
     recipesToAdd.forEach((recipe) =>
-      detailsSection.append.detailsSection(recipe)
+      detailsSection.append(recipe)
     );
   };
 
