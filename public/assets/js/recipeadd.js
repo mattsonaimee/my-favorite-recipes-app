@@ -51,6 +51,8 @@ $(function () {
           // eslint-disable-next-line no-unused-vars
           userId = data.UserId;
 
+          console.log(data);
+
           // We are updating
           updating = true;
         }
@@ -84,12 +86,13 @@ $(function () {
       ingredients: ingredientsInput.val().trim(),
       directions: directionsInput.val().trim(),
       URL: urlInput.val().trim(),
-      vegetarian: vegetarianInput.val().trim(),
-      vegan: veganInput.val().trim(),
-      gluten_free: glutenInput.val().trim(),
-      favorite_recipe: favoriteRecipeInput.val().trim(),
-      add_to_shopping_list: shoppingListInput.val().trim(),
-      UserId: data.UserId
+      vegetarian: vegetarianInput.val(),
+      vegan: veganInput.val(),
+      gluten_free: glutenInput.val(),
+      favorite_recipe: favoriteRecipeInput.val(),
+      add_to_shopping_list: shoppingListInput.val(),
+      // may need to declare data/recipe earlier to use here
+      // UserId: recipe.UserId
     };
     console.log(newRecipe);
 
@@ -120,6 +123,7 @@ $(function () {
       .catch((err) => console.error(err));
   };
 
+
   // Update a recipe then redirect to view recipes
   const updateRecipe = (recipe) => {
     fetch('/api/recipes', {
@@ -134,6 +138,7 @@ $(function () {
       })
       .catch((err) => console.error(err));
   };
+
 
   const imagesPreview = function (input, placeToInsertImagePreview) {
     if (input.files) {
