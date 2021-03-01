@@ -7,38 +7,43 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Everyday Recipes | Home</title>
 
-
+        <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
             integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
             crossorigin="anonymous" />
 
-        <!-- CSS only -->
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com/css2">
+
+        <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-
+        <!-- Custom CSS -->
         <link href="assets/css/style.css" rel="stylesheet">
 
-
+        <!-- Scripts -->
         <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/55d3b7ba4c.js" crossorigin="anonymous"></script>
         <script defer src="./assets/js/app.js"></script>
 
     </head>
 
-    <body>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded=" false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                    <ul class="navbar-nav mr-auto">
+                <div class="collapse navbar-collapse ml-auto" id="navbarsExampleDefault">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-home fa-fw"></i>Home Page</a>
+                            <a class="nav-link" href="#">Home Page</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="recipeadd.html">Add a Recipe
@@ -58,36 +63,68 @@
             </div>
         </nav>
 
-
+        <!-- Main Container -->
         <div class="container container-fluid">
             <div class="jumbotron">
+
+
                 <div class="row">
                     <div class="column-3">
                         <div class="logo">
                             <h1>Everyday Recipes</h1>
                             <h3>A place for all the delicious recipes you love. </h3>
 
+
                             <!-- carousel -->
-                            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div id="carouselExampleCaptions" class="carousel slide carousel-dark"
+                                data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                                        aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                                        aria-label="Slide 3"></button>
+                                </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="images/dessertspng-dessert-png-2000_649.png" class="d-block w-100"
-                                            alt="desert">
+                                        <img src="images/hamburger.png" class="d-block w-100 image-fluid" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <p>Feeling Hungry ?</p>
+                                        </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="images/meals colage.png" class="d-block w-100" alt="meals">
+                                        <img src="images/beef-rice-broc.png" class="d-block w-100 image-fluid"
+                                            alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <p>Healthy, simple meals</p>
+                                        </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="images/porkchop_veggies.png" class="d-block w-100" alt="porkchop">
+                                        <img src="images/treats.png" class="d-block w-100 image-fluid" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <br>
+
+                                            <p>Delicious treats for the whole family.</p>
+                                        </div>
                                     </div>
+                                    <div class="carousel-item">
+                                        <img src="images/porkchop_veggies.png" class="d-block w-100 image-fluid"
+                                            alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+
+                                            <p>Quick and easy recipes you'll love.</p>
+                                        </div>
+                                    </div>
+
                                 </div>
                                 <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                    data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
                                 <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                    data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
@@ -96,46 +133,57 @@
                     </div>
                 </div>
 
-
+                <!-- Empty row for spacing -->
                 <div class="row">
-                    <div class="col-lg-12" id="cooking-label">
-                        <h1>Let's Get cooking!</h1>
+                    <br>
+                    <br>
+                </div>
+
+                <!-- Search Section -->
+                <div class="row">
+                    <div class="col-lg-12" class="cooking-label">
+                        <h1 id="cooking-label-title">Let's Get Cooking!</h1>
                         <div class="card mb-4">
-                            <div class="card-header" id="search-text">
-                                Recipe Search
-                            </div>
-                            <div class="card-body">
-                                <input type="text" id="recipe-search" class="form-control">
+
+                            <div class="row search">
                                 <br>
-                                <div class="text-left">
-                                    <button type="submit" class="btn btn-outline-primary btn-md" id="search-btn">
-                                        <span class="fa fa-search"></span> A delicious recipe is just a click away...
-                                    </button>
-                                    <br>
-                                    <br>
-                                    <button type="button" class="btn btn-outline-primary btn-sm">
-                                        <span class="fa fa-eye"></span> View Saved Recipes</button>
+                                <br>
+                                <div class="card-header" id="search-text">
+                                    <h2>Recipe Search</h2>
                                 </div>
-                                <h2>Welcome to Everyday Recipes</h2>
-                                <br>
-                                <small class="text-secondary">A recipe has no soul. You as the cook must bring soul to
-                                    the
-                                    recipe.”<br>-
-                                    Thomas Keller
-                                </small>
+                                <div class="card-body">
+                                    <input type="text" id="recipe-search" class="form-control">
+                                    <div class="text-left">
+                                        <button type="submit" class="btn btn-sm" id="search-btn">
+                                            <span class="fa fa-search"></span> Search recipes...
+                                        </button>
+                                        <br>
+                                        <br>
+                                        <button type="button" class="btn btn-sm">
+                                            <span class="fa fa-eye"></span> View Saved Recipes</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- JavaScript Bundle with Popper -->
+        <!-- JavaScript Bundle -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
             crossorigin="anonymous"></script>
+
+        <!-- Empty row for spacing -->
+        <div class="row">
+            <br>
+            <br>
+        </div>
+
+        <footer class="footer">
+            <!-- empty footer -->
+        </footer>
 
     </body>
 
