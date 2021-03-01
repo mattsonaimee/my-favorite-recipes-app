@@ -42,11 +42,11 @@ $(function () {
           ingredientsInput.val() = data.ingredients;
           directionsInput.val() = data.directions;
           urlInput.val() = data.URL;
-          vegetarianInput.val() = data.vegetarian;
-          veganInput.val() = data.vegan;
-          glutenInput.val() = data.gluten_free;
-          favoriteRecipeInput.val() = data.favorite_recipe;
-          shoppingListInput.val() = data.add_to_shopping_list;
+          vegetarianInput.prop('checked') = data.vegetarian;
+          veganInput.prop('checked')= data.vegan;
+          glutenInput.prop('checked') = data.gluten_free;
+          favoriteRecipeInput.prop('checked') = data.favorite_recipe;
+          shoppingListInput.prop('checked') = data.add_to_shopping_list;
           // eslint-disable-next-line no-unused-vars
           userId = data.UserId || data.id;
 
