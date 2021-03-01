@@ -18,8 +18,8 @@ $(function () {
 
   // Get query parameter
   const url = window.location.search;
-  let recipeId;
-  let userId;
+  let recipeId = 1;
+  let userId = 1;
   let updating = false;
 
   // Get recipe data for editing/adding
@@ -48,8 +48,8 @@ $(function () {
           favoriteRecipeInput.prop('checked') = data.favorite_recipe;
           shoppingListInput.prop('checked') = data.add_to_shopping_list;
           // eslint-disable-next-line no-unused-vars
-          userId = data.UserId || data.id;
-
+          userId.val() = userId; 
+          recipeId.val() = recipeId;
           // We are updating
           updating = true;
         }
@@ -89,9 +89,10 @@ $(function () {
       vegan: veganInput.prop('checked'),
       gluten_free: glutenInput.prop('checked'),
       favorite_recipe: favoriteRecipeInput.prop('checked'),
-      add_to_shopping_list: shoppingListInput.prop('checked')
-      // may need to declare data/recipe earlier to use here
-      // UserId: userId
+      add_to_shopping_list: shoppingListInput.prop('checked'),
+      UserId: userId, 
+      recipeId: recipeId
+
     };
 
     console.log(newRecipe);
