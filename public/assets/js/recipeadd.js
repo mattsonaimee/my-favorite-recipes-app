@@ -26,6 +26,15 @@ $(function () {
       return userLoggedInId;
     })
   }
+
+  function getRecipeId () {
+    return $.get('/api/recipes').then((data) => {
+      const currentRecipeId = data.id;
+      console.log('here is the id of the user logged in ', currentRecipeId);
+      return currentRecipeId;
+    })
+  }
+
   let updating = false;
 
   // Get recipe data for editing/adding
@@ -42,7 +51,7 @@ $(function () {
       .then((data) => {
         if (data) {
           console.log('Success in getting post: ', data);
-
+        
           // Populate the form for editing
           recipeNameInput.val() = data.name;
           ingredientsInput.val() = data.ingredients;
@@ -55,7 +64,7 @@ $(function () {
           shoppingListInput.prop('checked') = data.add_to_shopping_list;
           // eslint-disable-next-line no-unused-vars
           // userId();
-          recipeId.val() = recipeId;
+          // recipeId.val() = recipeId;
           // We are updating
           updating = true;
         }
@@ -97,8 +106,7 @@ $(function () {
       favorite_recipe: favoriteRecipeInput.prop('checked'),
       add_to_shopping_list: shoppingListInput.prop('checked'),
       UserId: await getUserId(),
-      recipeId: recipeId
-
+      recipeId: await getRecipeId()
     };
 
     console.log(newRecipe);
@@ -166,3 +174,16 @@ $(function () {
     imagesPreview(this, 'div.preview-images');
   });
 });
+  // $('#input-files').on('click', function () {
+  //   
+  //   
+ 
+  // $(function() {
+  //    $("#input-files").change(function (){
+  //     console.log('clicked');
+  //      imagesPreview(this, 'div.preview-images');
+  //      $("#upload").submit();
+  //    });
+  // });
+  // });
+

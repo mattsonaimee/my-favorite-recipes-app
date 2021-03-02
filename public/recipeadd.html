@@ -137,29 +137,29 @@
                                     <input type="checkbox" id="shopping-list" name="shopping-list" value="shopping-list">
                                     <label for="shopping-list">Add to Shopping List</label>
                                     <br>
-                                    <button type="submit" class="btn btn-outline-danger btn-sm submit">
-                                        <span class="fa fa-plus"></span> Add this recipe to my favorites
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    Upload an image
-                                </div>
-                                <div class="card-body" id="details-section">
-                                    <form action="/store-image" method="POST" enctype="multipart/form-data">
-                                        <div class="form-group">
-                                            <input type="file" name="file" id="input-files"
-                                                class="form-control-file border" />
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    Upload an image
+                                                </div>
+                                                <div class="card-body" id="details-section">
+                                                    <form id="upload" action="/store-image" method="POST" enctype="multipart/form-data">
+                                                        <div class="form-group">
+                                                            <input type="file" name="file" id="input-files"
+                                                                class="form-control-file border" />
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary" >Submit</button>
+                                                    </form>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Upload</button>
-                                    </form>
-                                </div>
+                                    </div>
+                
+                                    <!-- <button type="submit" class="btn btn-outline-danger btn-sm submit">
+                                        <span class="fa fa-plus"></span> Add this recipe to my favorites
+                                    </button> -->
+                                </form>
                             </div>
                         </div>
                     </div>
