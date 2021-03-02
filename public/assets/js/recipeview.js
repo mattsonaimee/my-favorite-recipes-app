@@ -4,6 +4,7 @@ $(function () {
   console.log('DOM loaded!');
 
   const detailsSection = $('#details-section');
+  const recipeDetails = $('#recipedetails-section');
 
   // variable to hold out recipes
   let recipes;
@@ -43,7 +44,7 @@ $(function () {
     getRecipes();
   }
 
-  // Front end call to DELETE a post
+  // Front end call to DELETE a recipe
   const deleteRecipe = (id) => {
     fetch(`/api/recipes/${id}`, {
       method: 'DELETE',
@@ -52,6 +53,16 @@ $(function () {
       }
     }).then(getRecipes());
   };
+
+  // Front end call to VIEW a recipe
+  const viewRecipe = (id) => {
+    fetch(`/api/recipes/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(recipeDetails.append(id));
+  }
 
   // Create HTML rows for the recipe container
   const initializeRecipes = () => {
@@ -79,6 +90,10 @@ $(function () {
     const editButton = $('<button>').attr('class', 'edit').text('EDIT');
     editButton.on('click', handleRecipeEdit);
 
+    // View button
+    const viewButton = $('<button>').attr('class', 'view').text('VIEW');
+    viewButton.on('click', handleRecipeView);
+
     const newRecipeName = $('h2');
 
     const newRecipeCardBody = $('<div>').attr('class', 'card-body');
@@ -88,6 +103,7 @@ $(function () {
     newRecipeBody.text(`${recipe.body}`);
     newRecipeCardHeading.append(deleteButton);
     newRecipeCardHeading.append(editButton);
+    newRecipeCardHeading.append(viewButton);
     newRecipeCardHeading.append(newRecipeName);
     newRecipeCardBody.append(newRecipeBody);
     newRecipeCard.append(newRecipeCardHeading);
@@ -135,5 +151,14 @@ $(function () {
     );
 
     window.location.href = `/recipes?recipe_id=${currentRecipe.id}`;
+  };
+
+  // Handle when we click the view recipe button
+  const handleRecipeView = (e) => {
+    const currentRecipe = JSON.parse(
+      e.target.parentElement.parentElement.dataset.recipe
+    );
+
+    viewRecipe(currentRecipe.id);
   };
 });
