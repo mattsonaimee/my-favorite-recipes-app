@@ -4,6 +4,15 @@
 // Wait for the DOM to completely load before we run our JS
 $(function () {
   console.log('DOM loaded!');
+  // const idNOW = () => {
+  //     $.get('/api/users').then((data) => {
+  //     let userLoggedInId = data.id;
+  //     console.log('here is the id of the user logged in ', userLoggedInId);
+  //     return userLoggedInId;
+  //   })
+  // }
+
+  // idNOW();
 
   // Get references to the recipe items
   const recipeNameInput = $('#recipe-name');
@@ -18,9 +27,24 @@ $(function () {
 
   // Get query parameter
   const url = window.location.search;
-  let recipeId = 1;
-  let userId = 1;
+  let recipeId;
+  function userId () {
+    $.get('/api/users').then((data) => {
+      const userLoggedInId = data.id;
+      console.log('here is the id of the user logged in ', userLoggedInId);
+      return userLoggedInId;
+    })
+  }
   let updating = false;
+
+  // const getUserId = function () {
+  //   $.get('/api/users').then((data) => {
+  //     let userLoggedInId = data.id;
+  //     let userLoggedInEmail = data.email;
+  //     console.log('here is the id of the user logged in ', userLoggedInId);
+  //     console.log('here is the email of the user logged in ', userLoggedInEmail);
+  //   })
+  // }
 
   // Get recipe data for editing/adding
   const getRecipeData = (id, type) => {
@@ -48,7 +72,7 @@ $(function () {
           favoriteRecipeInput.prop('checked') = data.favorite_recipe;
           shoppingListInput.prop('checked') = data.add_to_shopping_list;
           // eslint-disable-next-line no-unused-vars
-          userId.val() = userId; 
+          userId();
           recipeId.val() = recipeId;
           // We are updating
           updating = true;
@@ -90,7 +114,7 @@ $(function () {
       gluten_free: glutenInput.prop('checked'),
       favorite_recipe: favoriteRecipeInput.prop('checked'),
       add_to_shopping_list: shoppingListInput.prop('checked'),
-      UserId: userId, 
+      UserId: userId(),
       recipeId: recipeId
 
     };
