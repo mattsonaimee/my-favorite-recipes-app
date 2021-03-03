@@ -8,7 +8,7 @@ const uploadFiles = async (req, res) => {
   try {
     console.log(req.file);
 
-    if (req.file === undefined) {
+    if (req.file == undefined) {
       return res.send('You must select a file.');
     }
     // use create mode to save image info
