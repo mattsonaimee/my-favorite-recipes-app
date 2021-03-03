@@ -20,7 +20,7 @@
             integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
         <!-- Custom CSS -->
-        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/signup.css" rel="stylesheet">
 
         <!-- Scripts -->
         <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -31,7 +31,7 @@
 
     <body>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded=" false"
@@ -41,21 +41,7 @@
                 <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="app.html"><i class="fa fa-home fa-fw"></i>Home Page</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="recipeadd.html">Recipe
-                                Add Page</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="recipeview.html">Recipe
-                                view Page</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Login Page</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="signup.html">Sign Up Page</a>
+                            <a class="nav-link fas fa-utensils" href="signup.html">Sign Up</a>
                         </li>
                     </ul>
                 </div>
@@ -67,21 +53,22 @@
         <div class="container container-fluid">
             <div class="jumbotron">
                 <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <h2>Login Form</h2>
+                    <div class="col-md-12">
+                        <header class="user-header">
+                            <img src="./images/ER Logo w green.png" alt="tempLogo" />
+                            <h1 class="user-title">Login to Everyday Recipes</h1>
+                          </header>
                         <form class="login">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
                                 <input type="email" class="form-control" id="email-input" placeholder="Email">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
                                 <input type="password" class="form-control" id="password-input" placeholder="Password">
                             </div>
                             <button type="submit" class="btn btn-default">Login</button>
                         </form>
                         <br />
-                        <p>Or sign up <a href="./signup.html">here</a></p>
+                        <p class="user-title">Or sign up <a href="./signup.html">here</a></p>
                     </div>
                 </div>
             </div>

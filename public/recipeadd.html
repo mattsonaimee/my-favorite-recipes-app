@@ -1,182 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Everyday Recipes | Home</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everyday Recipes | Home</title>
 
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-            integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-            crossorigin="anonymous" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
 
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com/css2">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2">
 
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-        <!-- Custom CSS -->
-        <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
 
-        <!-- Scripts -->
-        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://kit.fontawesome.com/55d3b7ba4c.js" crossorigin="anonymous"></script>
-        <script defer src="./assets/js/recipeadd.js"></script>
+    <!-- Scripts -->
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/55d3b7ba4c.js" crossorigin="anonymous"></script>
+    <script defer src="./assets/js/recipeadd.js"></script>
 
-    </head>
+</head>
 
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded=" false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="app.html"><i class="fa fa-home fa-fw"></i>Home Page</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Recipe
-                                Add Page</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="recipeview.html">Recipe
-                                view Page</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login Page</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="signup.html">Sign Up Page</a>
-                        </li>
-                    </ul>
-                    <!-- <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form> -->
-                </div>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded=" false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="app.html"><i class="fa fa-home fa-fw"></i>Home Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipeview.html">View My Recipes</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
 
 
 
-        <div class="container container-fluid">
-            <div class="jumbotron">
-                <h2>Add a recipe</h2>
-            </div>
+    <!-- <div class="container container-fluid">
+        <div class="jumbotron">
+            <h2>Add a recipe</h2>
+        </div>
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            Recipe Search
-                        </div>
-                        <div class="card-body">
-                                 <button type="button" class="btn btn-outline-primary btn-sm">
-                                    <span class="fa fa-eye"></span> View Saved Recipes</button>
-                            </div>
-                        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Recipe Search
                     </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header">
-                            Recipe Details
-                        </div>
-                        <div class="card-body" id="details-section">
-                            <!-- Content will go in here -->
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                Recipe
-                            </div>
-                            <div class="card-body" id="details-section">
-                                <form class="add-recipe" id="add-recipe">
-                                    <div class="form-group">
-                                        <label for="recipe-name">Recipe Name</label>
-                                        <input type="name" class="form-control" id="recipe-name"
-                                            placeholder="Recipe Name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="ingredients">Ingredients</label>
-                                        <input type="text" class="form-control" id="ingredients"
-                                            placeholder="Ingredients">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="directions">Directions</label>
-                                        <input type="text" class="form-control" id="directions"
-                                            placeholder="Directions">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="url">URL</label>
-                                        <input type="text" class="form-control" id="url" placeholder="URL">
-                                    </div>
-                                    <input type="checkbox" id="vegetarian" name="vegetarian" value="vegetariane">
-                                    <label for="vegetarian">Vegetarian</label>
-                                    <br>
-                                    <input type="checkbox" id="vegan" name="vegan" value="vegan">
-                                    <label for="vegan">Vegan</label>
-                                    <br>
-                                    <input type="checkbox" id="gluten-free" name="gluten-free" value="gluten-free" >
-                                    <label for="gluten-free">Gluten Free</label>
-                                    <br>
-                                    <input type="checkbox" id="favorite-recipe" name="favorite-recipe" value="favorite-recipe">
-                                    <label for="favorite-recipe">Favorite Recipe</label>
-                                    <br>
-                                    <input type="checkbox" id="shopping-list" name="shopping-list" value="shopping-list">
-                                    <label for="shopping-list">Add to Shopping List</label>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    Upload an image
-                                                </div>
-                                                <div class="card-body" id="details-section">
-                                                    <form id="upload" action="/api/recipes" method="POST" enctype="multipart/form-data">
-                                                        <div class="form-group">
-                                                            <input type="file" name="file" id="input-files"
-                                                                class="form-control-file border" />
-                                                        </div>
-                                                        <button type="submit" class="btn btn-primary" >Submit</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                
-                                    <!-- <button type="submit" class="btn btn-outline-danger btn-sm submit">
-                                        <span class="fa fa-plus"></span> Add this recipe to my favorites
-                                    </button> -->
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="preview-images">
-                        <!-- Content will go here -->
+                    <div class="card-body">
+                        <button type="button" class="btn btn-outline-primary btn-sm">
+                            <span class="fa fa-eye"></span> View Saved Recipes</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div> -->
 
-         <!-- JavaScript Bundle -->
-         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-         crossorigin="anonymous"></script>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    Recipe
+                </div>
+                <div class="card-body" id="details-section">
+                    <form class="add-recipe" id="add-recipe">
+                        <div class="form-group">
+                            <label for="recipe-name">Recipe Name</label>
+                            <input type="name" class="form-control" id="recipe-name" placeholder="Recipe Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="ingredients">Ingredients</label>
+                            <input type="text" class="form-control" id="ingredients" placeholder="Ingredients">
+                        </div>
+                        <div class="form-group">
+                            <label for="directions">Directions</label>
+                            <input type="text" class="form-control" id="directions" placeholder="Directions">
+                        </div>
+                        <div class="form-group">
+                            <label for="url">URL</label>
+                            <input type="text" class="form-control" id="url" placeholder="URL">
+                        </div>
+                        <input type="checkbox" id="vegetarian" name="vegetarian" value="vegetariane">
+                        <label for="vegetarian">Vegetarian</label>
+                        <br>
+                        <input type="checkbox" id="vegan" name="vegan" value="vegan">
+                        <label for="vegan">Vegan</label>
+                        <br>
+                        <input type="checkbox" id="gluten-free" name="gluten-free" value="gluten-free">
+                        <label for="gluten-free">Gluten Free</label>
+                        <br>
+                        <input type="checkbox" id="favorite-recipe" name="favorite-recipe" value="favorite-recipe">
+                        <label for="favorite-recipe">Favorite Recipe</label>
+                        <br>
+                        <input type="checkbox" id="shopping-list" name="shopping-list" value="shopping-list">
+                        <label for="shopping-list">Add to Shopping List</label>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Upload an image
+                                    </div>
+                                    <div class="card-body" id="details-section">
+                                        <form id="upload" action="/api/recipes" method="POST"
+                                            enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <input type="file" name="file" id="input-files"
+                                                    class="form-control-file border" />
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="preview-images">
+            <!-- Content will go here -->
+        </div>
+    </div>
 
 
-    </body>
+    <!-- JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+
+</body>
 
 </html>
