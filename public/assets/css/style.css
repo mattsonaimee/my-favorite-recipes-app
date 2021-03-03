@@ -294,11 +294,11 @@
 }
 
 .navbar {
-  background: #a3bcb6;
+  background: #dde2e1;
   text-align: end;
 }
 .nav-link {
-  color: white;
+  color: #B2AC88;
   font-weight: bolder;
   text-align: right;
   font-variant-caps: normal;
@@ -354,7 +354,7 @@
 }
 
 .btn {
-  background-color: #266150;
+  background-color:#B2AC88;
   color: white;
 }
 
