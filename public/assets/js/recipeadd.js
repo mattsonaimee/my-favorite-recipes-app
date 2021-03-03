@@ -15,6 +15,11 @@ $(function () {
   const glutenInput = $('#gluten-free');
   const favoriteRecipeInput = $('#favorite-recipe');
   const shoppingListInput = $('#shopping-list');
+  const image = $('#upload');
+  // change to input ?
+
+  // global variables for image object
+  let fileData;
 
   // Get query parameter
   const url = window.location.search;
@@ -62,9 +67,7 @@ $(function () {
           glutenInput.prop('checked') = data.gluten_free;
           favoriteRecipeInput.prop('checked') = data.favorite_recipe;
           shoppingListInput.prop('checked') = data.add_to_shopping_list;
-          // eslint-disable-next-line no-unused-vars
-          // userId();
-          // recipeId.val() = recipeId;
+
           // We are updating
           updating = true;
         }
@@ -80,7 +83,7 @@ $(function () {
 
   // Event handler for when the post for is submitted
 
-  const handleFormSubmit = async (e) => {
+  const handleFormSubmit = async function (e) {
     e.preventDefault();
 
     if (
@@ -109,32 +112,53 @@ $(function () {
       recipeId: await getRecipeId()
     };
 
-    console.log(newRecipe);
-
     // Update a post if flag is true, otherwise submit a new one
     if (updating) {
       newRecipe.id = recipeId;
       updateRecipe(newRecipe);
     } else {
-      submitRecipe(newRecipe);
+      const src = $('#uploadedImage').attr('src')
+      const name = $('#uploadedImage').attr('data-name')
+      const type = $('#uploadedImage').attr('data-type')
+      const imageObject = {
+        src, name, type
+      }
+      submitRecipe(newRecipe, imageObject);
     }
   };
 
   // Attach an event listener to the form on submit; will trigger handleFormSubmit
   $('#add-recipe').on('submit', handleFormSubmit);
+  
+  // Attach an event listener to the image on change; will save file to global variable
+  $('#input-files').on('change', function () {
+    fileData = this.files[0];
+  })
 
   // Submits new recipe then redirects to view recipes
-  const submitRecipe = (recipe) => {
+  const submitRecipe = (recipe, image) => {
     fetch('/api/recipes', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(recipe)
+      body: JSON.stringify({recipe, image})
     })
       .then(() => {
         window.location.href = '/view';
       })
+      .catch((err) => console.error(err));
+  };
+
+  // Submits new image then redirects to view recipes
+  const submitImage = (image) => {
+    fetch('/api/images', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'image/*'
+      },
+      body: recipe.push(image)
+    })
       .catch((err) => console.error(err));
   };
 
@@ -163,27 +187,29 @@ $(function () {
         reader.onload = function (event) {
           $($.parseHTML('<img>'))
             .attr('src', event.target.result)
+            .attr('data-name', input.files[0].name)
+            .attr('data-type', input.files[0].type)
+            .attr('id', 'uploadedImage')
             .appendTo(placeToInsertImagePreview);
         };
         reader.readAsDataURL(input.files[i]);
       }
     }
   };
-  $('#input-files').on('click', function () {
-    console.log('clicked');
-    imagesPreview(this, 'div.preview-images');
-  });
-});
+  // $('#input-files').on('click', function () {
+  //   console.log('clicked');
+  //   imagesPreview(this, 'div.preview-images');
+  // });
+// });
   // $('#input-files').on('click', function () {
   //   
   //   
  
-  // $(function() {
-  //    $("#input-files").change(function (){
-  //     console.log('clicked');
-  //      imagesPreview(this, 'div.preview-images');
-  //      $("#upload").submit();
-  //    });
-  // });
-  // });
-
+  $(function() {
+     $("#input-files").change(function (){
+      console.log('clicked');
+       imagesPreview(this, 'div.preview-images');
+       $("#upload").submit();
+     });
+  });
+});
