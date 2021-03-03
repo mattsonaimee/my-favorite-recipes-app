@@ -4,6 +4,7 @@
 // Wait for the DOM to completely load before we run our JS
 $(function () {
   console.log('DOM loaded!');
+  
 
   // Get references to the recipe items
   const recipeNameInput = $('#recipe-name');
@@ -15,11 +16,10 @@ $(function () {
   const glutenInput = $('#gluten-free');
   const favoriteRecipeInput = $('#favorite-recipe');
   const shoppingListInput = $('#shopping-list');
-  const image = $('#upload');
-  // change to input ?
+  const image = $('#input-files');
 
-  // global variables for image object
-  let fileData;
+  // // global variables for image object
+  // let fileData;
 
   // Get query parameter
   const url = window.location.search;
@@ -117,12 +117,13 @@ $(function () {
       newRecipe.id = recipeId;
       updateRecipe(newRecipe);
     } else {
-      const src = $('#uploadedImage').attr('src')
+      const data = $('#uploadedImage').attr('src')
       const name = $('#uploadedImage').attr('data-name')
       const type = $('#uploadedImage').attr('data-type')
       const imageObject = {
-        src, name, type
+        data, name, type
       }
+      console.log('This is the imageObject', imageObject)
       submitRecipe(newRecipe, imageObject);
     }
   };
@@ -130,10 +131,10 @@ $(function () {
   // Attach an event listener to the form on submit; will trigger handleFormSubmit
   $('#add-recipe').on('submit', handleFormSubmit);
   
-  // Attach an event listener to the image on change; will save file to global variable
-  $('#input-files').on('change', function () {
-    fileData = this.files[0];
-  })
+  // // Attach an event listener to the image on change; will save file to global variable
+  // $('#input-files').on('change', function () {
+  //   fileData = this.files[0];
+  // })
 
   // Submits new recipe then redirects to view recipes
   const submitRecipe = (recipe, image) => {
@@ -147,18 +148,6 @@ $(function () {
       .then(() => {
         window.location.href = '/view';
       })
-      .catch((err) => console.error(err));
-  };
-
-  // Submits new image then redirects to view recipes
-  const submitImage = (image) => {
-    fetch('/api/images', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'image/*'
-      },
-      body: recipe.push(image)
-    })
       .catch((err) => console.error(err));
   };
 
@@ -179,6 +168,7 @@ $(function () {
 
   const imagesPreview = function (input, placeToInsertImagePreview) {
     if (input.files) {
+      console.log(input.files);
       const filesAmount = input.files.length;
       // eslint-disable-next-line no-undef
       // eslint-disable-next-line no-unmodified-loop-condition
@@ -196,17 +186,9 @@ $(function () {
       }
     }
   };
-  // $('#input-files').on('click', function () {
-  //   console.log('clicked');
-  //   imagesPreview(this, 'div.preview-images');
-  // });
-// });
-  // $('#input-files').on('click', function () {
-  //   
-  //   
  
   $(function() {
-     $("#input-files").change(function (){
+     image.change(function (){
       console.log('clicked');
        imagesPreview(this, 'div.preview-images');
        $("#upload").submit();
