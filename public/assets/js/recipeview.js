@@ -3,7 +3,7 @@
 $(function () {
   console.log('DOM loaded!');
 
-  const detailsSection = $('#details-section');
+  const recipeNames = $('#details-section');
   const recipeDetails = $('#recipedetails-section');
 
   // variable to hold out recipes
@@ -61,17 +61,20 @@ $(function () {
       headers: {
         'Content-Type': 'application/json'
       }
-    }).then(recipeDetails.append(id));
+
+    }).then(res => {
+      console.log(`this is the response: ${res}`)
+      // generatePreview(res);
+    })
   }
 
   // Create HTML rows for the recipe container
   const initializeRecipes = () => {
-    detailsSection.html('');
+    recipeNames.html('');
     const recipesToAdd = [];
-
     recipes.forEach((recipe) => recipesToAdd.push(createNewRecipe(recipe)));
     recipesToAdd.forEach((recipe) =>
-      detailsSection.append(recipe)
+      recipeNames.append(recipe)
     );
   };
 
@@ -79,26 +82,27 @@ $(function () {
     console.log('createNewRecipe', recipe.name);
 
     // New recipe card
-    const newRecipeCard = $('<div>').attr('class', 'card');
-    const newRecipeCardHeading = $('<div>').attr('class', 'card-header');
+    const newRecipeCard = $('<div>').addClass('card');
+    const newRecipeCardHeading = $('<div>').addClass('card-header');
     // const newRecipeCardBody = $('<div>').attr('class', 'card-body');
 
     // Delete button
-    const deleteButton = $('<button>').attr('class', 'delete').text('DELETE');
+    const deleteButton = $('<button>').addClass('delete').attr('value', recipe.id).text('DELETE');
     deleteButton.on('click', handleRecipeDelete);
 
     // Edit button
-    const editButton = $('<button>').attr('class', 'edit').text('EDIT');
+    const editButton = $('<button>').addClass('edit').attr('value', recipe.id).text('EDIT');
     editButton.on('click', handleRecipeEdit);
 
     // View button
-    const viewButton = $('<button>').attr('class', 'view').text('VIEW');
+    const viewButton = $('<button>').addClass('view').attr('value', recipe.id).text('VIEW');
     viewButton.on('click', handleRecipeView);
 
     const newRecipeName = $('<h2>');
     // const newRecipeBody = $('<p>');
 
     newRecipeName.text(`${recipe.name}`);
+
     // newRecipeBody.text(`${recipe.body}`);
 
     // Append recipe information to new recipe card
@@ -123,7 +127,7 @@ $(function () {
       partial = ` for recipe #${id}`;
     }
 
-    detailsSection.text(' ');
+    recipeNames.text(' ');
     const styles = {
       textAlign: 'center',
       marginTop: '50px'
@@ -133,33 +137,41 @@ $(function () {
       .text(
         `No recipes yes${partial}, navigate <a href='/recipes${query}'>here</a> in order to get started.`
       );
-    detailsSection.append(messageH2);
+    recipeNames.append(messageH2);
   };
 
   // Handle when we click the edit recipe button
-  const handleRecipeDelete = (e) => {
+  function handleRecipeDelete () {
     console.log('handle delete recipe function was invoked');
-    const currentRecipe = JSON.parse(e.target.parentElement.dataset.recipe);
-    console.log(currentRecipe);
-
-    // deleteRecipe(currentRecipe.id);
+    console.log(`current recipe: ${this.value}`)
+    deleteRecipe(this.value);
   };
 
   // Handle when we click the edit recipe button
-  const handleRecipeEdit = (e) => {
-    const currentRecipe = JSON.parse(
-      e.target.parentElement.parentElement.dataset.recipe
-    );
-
-    window.location.href = `/recipes?recipe_id=${currentRecipe.id}`;
+  function handleRecipeEdit () {
+    console.log('handle edit recipe function was invoked');
+    window.location.href = `/recipes?recipe_id=${this.value}`;
   };
 
   // Handle when we click the view recipe button
-  const handleRecipeView = (e) => {
-    const currentRecipe = JSON.parse(
-      e.target.parentElement.parentElement.dataset.recipe
-    );
-
-    viewRecipe(currentRecipe.id);
+  function handleRecipeView () {
+    console.log('handle view recipe function was invoked');
+    console.log(`current recipe: ${this.value}`)
+    viewRecipe(this.value);
   };
-});
+
+  const testRecipe = {
+    name: 'burger'
+
+  }
+  function generatePreview (recipe) {
+    $('<h2>').addClass('preview-title').text(testRecipe.name);
+    $('<div>').addClass('col-lg-6 details').text('Details: ');
+    $('<div>').addClass('col-lg-6 image');
+    $('')
+  };
+
+  generatePreview(testRecipe);
+
+
+})
