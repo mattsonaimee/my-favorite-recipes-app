@@ -76,11 +76,12 @@ $(function () {
   };
 
   const createNewRecipe = (recipe) => {
-    console.log('createNewRecipe' + recipe);
+    console.log('createNewRecipe', recipe.name);
 
+    // New recipe card
     const newRecipeCard = $('<div>').attr('class', 'card');
-
     const newRecipeCardHeading = $('<div>').attr('class', 'card-header');
+    // const newRecipeCardBody = $('<div>').attr('class', 'card-body');
 
     // Delete button
     const deleteButton = $('<button>').attr('class', 'delete').text('DELETE');
@@ -94,23 +95,23 @@ $(function () {
     const viewButton = $('<button>').attr('class', 'view').text('VIEW');
     viewButton.on('click', handleRecipeView);
 
-    const newRecipeName = $('h2');
+    const newRecipeName = $('<h2>');
+    // const newRecipeBody = $('<p>');
 
-    const newRecipeCardBody = $('<div>').attr('class', 'card-body');
-
-    const newRecipeBody = $('p');
     newRecipeName.text(`${recipe.name}`);
-    newRecipeBody.text(`${recipe.body}`);
-    newRecipeCardHeading.append(deleteButton);
-    newRecipeCardHeading.append(editButton);
-    newRecipeCardHeading.append(viewButton);
-    newRecipeCardHeading.append(newRecipeName);
-    newRecipeCardBody.append(newRecipeBody);
-    newRecipeCard.append(newRecipeCardHeading);
-    newRecipeCard.append(newRecipeCardBody);
-    newRecipeCard.attr('data-post', JSON.stringify(recipes));
+    // newRecipeBody.text(`${recipe.body}`);
 
-    console.log('createNewRecipe -> newRecipeCard', newRecipeCard);
+    // Append recipe information to new recipe card
+    newRecipeCardHeading.append(newRecipeName);
+    newRecipeCardHeading.append(viewButton);
+    newRecipeCardHeading.append(editButton);
+    newRecipeCardHeading.append(deleteButton);
+    // newRecipeCardBody.append(newRecipeBody);
+    newRecipeCard.append(newRecipeCardHeading);
+    // newRecipeCard.append(newRecipeCardBody);
+    newRecipeCard.attr('data-post', JSON.stringify(recipe));
+
+    console.log(newRecipeCard[0]);
     return newRecipeCard;
   };
 
@@ -137,11 +138,11 @@ $(function () {
 
   // Handle when we click the edit recipe button
   const handleRecipeDelete = (e) => {
-    const currentRecipe = JSON.parse(
-      e.target.parentElement.parentElement.dataset.recipe
-    );
+    console.log('handle delete recipe function was invoked');
+    const currentRecipe = JSON.parse(e.target.parentElement.dataset.recipe);
+    console.log(currentRecipe);
 
-    deleteRecipe(currentRecipe.id);
+    // deleteRecipe(currentRecipe.id);
   };
 
   // Handle when we click the edit recipe button
