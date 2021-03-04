@@ -27,6 +27,10 @@ a {
     max-width: 600px;
     margin: 10vh auto;
 }
+.logo-signup {
+    max-width: 96px;
+    max-height: 96px;
+}
 
 .navbar {
     background-color: aliceblue;
