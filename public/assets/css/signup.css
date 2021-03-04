@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+       font-family: 'Oswald', cursive;
     font-size: 16px;
     background-size: 200% 100% !important;
     animation: move 10s ease infinite;
@@ -33,22 +33,12 @@ a {
 }
 
 .nav-link {
-    color: #B2AC88;
+    color: rgb(44, 63, 44);
     font-weight: bolder;
     text-align: right;
     font-variant-caps: normal;
   }
-  .logo {
-    color: #3c403d;
-  }
-  .logo h1 {
-    padding-top: 35px;
-    font-size: 70px;
-    color: #3c403d;
-  }
-  .logo h1 h3 {
-    font-family: 'Gravitas One', cursive;
-  }
+
 
 .user-header {
     text-align: center;
@@ -83,7 +73,7 @@ a {
     display: block;
     width: 100%;
     padding: 20px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     font-family: 'Oswald', cursive;
     -webkit-appearance: none;
     border: 0;
     outline: 0;
@@ -98,7 +88,7 @@ a {
     display: block;
     width: 100%;
     padding: 20px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   font-family: 'Oswald', cursive;
     -webkit-appearance: none;
     outline: 0;
     border: 0;
