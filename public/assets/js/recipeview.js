@@ -61,22 +61,45 @@ $(function () {
       headers: {
         'Content-Type': 'application/json'
       }
-
-    }).then(res => res.json())
-      .then(data => {
+    })
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
+        const imageString = data.Images[0].data.data.toString('base64');
+        const finalImage = decodeURI(imageString);
+        console.log(imageString);
+        // generatePreview(data);
+        function generatePreview (recipe) {
+          const recipeName = $('<h2>')
+            .addClass('preview-title')
+            .text(`${recipe.name}`);
+          const detailsDiv = $('<div>').addClass('col-lg-10 details');
+          const imageDiv = $('<div>').addClass('col-lg-2 image');
+          detailsDiv.html(`
+          <p> Ingredients: ${recipe.ingredients} </p>
+          <p> Directions: ${recipe.directions} </p>
+          <p> URL: ${recipe.URL} </p>
+          <p> Vegetarian?: ${recipe.vegetarian} </p>
+          <p> Vegan?: ${recipe.vegan} </p>
+          <p> Gluten_Free?: ${recipe.gluten_free} </p>
+          <p> Favorite Recipe?: ${recipe.favorite_recipe} </p>
+          <p> Add To Shopping List?: ${recipe.add_to_shopping_list}
+          `);
+          recipeDetails.append(recipeName, detailsDiv, imageDiv);
+          const image = $('<img>').attr('src', 'data:image/jpeg;base64, ' + finalImage)
+          imageDiv.append(image);
+          return recipeDetails + imageDiv;
+        }
         generatePreview(data);
       });
-  }
+  };
 
   // Create HTML rows for the recipe container
   const initializeRecipes = () => {
     recipeNames.html('');
     const recipesToAdd = [];
     recipes.forEach((recipe) => recipesToAdd.push(createNewRecipe(recipe)));
-    recipesToAdd.forEach((recipe) =>
-      recipeNames.append(recipe)
-    );
+    recipesToAdd.forEach((recipe) => recipeNames.append(recipe));
   };
 
   const createNewRecipe = (recipe) => {
@@ -88,15 +111,24 @@ $(function () {
     // const newRecipeCardBody = $('<div>').attr('class', 'card-body');
 
     // Delete button
-    const deleteButton = $('<button>').addClass('delete').attr('value', recipe.id).text('DELETE');
+    const deleteButton = $('<button>')
+      .addClass('delete')
+      .attr('value', recipe.id)
+      .text('DELETE');
     deleteButton.on('click', handleRecipeDelete);
 
     // Edit button
-    const editButton = $('<button>').addClass('edit').attr('value', recipe.id).text('EDIT');
+    const editButton = $('<button>')
+      .addClass('edit')
+      .attr('value', recipe.id)
+      .text('EDIT');
     editButton.on('click', handleRecipeEdit);
 
     // View button
-    const viewButton = $('<button>').addClass('view').attr('value', recipe.id).text('VIEW');
+    const viewButton = $('<button>')
+      .addClass('view')
+      .attr('value', recipe.id)
+      .text('VIEW');
     viewButton.on('click', handleRecipeView);
 
     const newRecipeName = $('<h2>');
@@ -144,40 +176,68 @@ $(function () {
   // Handle when we click the edit recipe button
   function handleRecipeDelete () {
     console.log('handle delete recipe function was invoked');
-    console.log(`current recipe: ${this.value}`)
+    console.log(`current recipe: ${this.value}`);
     deleteRecipe(this.value);
-  };
+  }
 
   // Handle when we click the edit recipe button
   function handleRecipeEdit () {
     console.log('handle edit recipe function was invoked');
     window.location.href = `/recipes?recipe_id=${this.value}`;
-  };
+  }
 
   // Handle when we click the view recipe button
   function handleRecipeView () {
     console.log('handle view recipe function was invoked');
-    console.log(`current recipe: ${this.value}`)
+    console.log(`current recipe: ${this.value}`);
     viewRecipe(this.value);
+  }
+
+  // Front end call to VIEW an image
+  const imageRender = async (req, res) => {
+    try {
+      const recipes = await Recipe.findAll({
+        include: [
+          {
+            model: Recipe,
+            as: 'Images'
+          }
+        ]
+      })
+        .then(recipes => {
+          recipes.map(recipe => {
+            const recipeImage = recipe.imageData.toString('base64')
+            recipe['data'] = recipeImage
+          });
+          return recipes;
+        })
+        .then(recipes => {
+          return res.status(200).json({ recipes: recipes });
+        });
+    } catch (error) {
+      return res.status(500).send(error.message);
+    }
   };
 
-  function generatePreview (recipe) {
-    const recipeName = $('<h2>').addClass('preview-title').text(`${recipe.name}`);
-    const detailsDiv = $('<div>').addClass('col-lg-4 details');
-    const imageDiv = $('<div>').addClass('col-lg-2 image');
-    detailsDiv.text(`
-    Ingredients: ${recipe.ingredients} \n
-    Directions: ${recipe.directions} \n
-    URL: ${recipe.URL} \n
-    Vegetarian?: ${recipe.vegetarian} \n
-    Vegan?: ${recipe.vegan} \n
-    Gluten_Free?: ${recipe.gluten_free} \n
-    Favorite Recipe?: ${recipe.favorite_recipe} \n
-    Add To Shopping List? ${recipe.add_to_shopping_list}
-    `);
-    imageDiv.attr('src', `${recipe.image}`);
-    recipeDetails.append(recipeName, detailsDiv, imageDiv);
-    // recipeDetails.attr('data-post', JSON.stringify(recipe));
-    return recipeDetails;
-  }
-})
+  // function generatePreview (recipe) {
+  //   const recipeName = $('<h2>')
+  //     .addClass('preview-title')
+  //     .text(`${recipe.name}`);
+  //   const detailsDiv = $('<div>').addClass('col-lg-10 details');
+  //   const imageDiv = $('<div>').addClass('col-lg-2 image');
+  //   detailsDiv.html(`
+  //   <p> Ingredients: ${recipe.ingredients} </p>
+  //   <p> Directions: ${recipe.directions} </p>
+  //   <p> URL: ${recipe.URL} </p>
+  //   <p> Vegetarian?: ${recipe.vegetarian} </p>
+  //   <p> Vegan?: ${recipe.vegan} </p>
+  //   <p> Gluten_Free?: ${recipe.gluten_free} </p>
+  //   <p> Favorite Recipe?: ${recipe.favorite_recipe} </p>
+  //   <p> Add To Shopping List?: ${recipe.add_to_shopping_list}
+  //   `);
+  //   recipeDetails.append(recipeName, detailsDiv, imageDiv);
+  //   console.log(imageRender(`${this.id}`));
+  //   // recipeDetails.attr('data-post', JSON.stringify(recipe));
+  //   return recipeDetails + imageDiv;
+  // }
+});
