@@ -146,3 +146,45 @@ text-align: center;
 .footer {
   background: #a3bcb6;
 }
+
+
+/* recipead.html */
+
+.details {
+
+  margin:10%;
+  padding-bottom: 8%;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.card {
+  border-style: solid;
+  border-width: 20pt;
+  border-color: rgb(88, 141, 129);
+  padding-bottom: 50pt;
+  padding-top: 100pt;
+  /* font-family: 'Lilita One', cursive; */
+ 
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+  background: linear-gradient(45deg, #b2ac88 10%, #daded4 90%);
+  margin: 5;
+  padding: 0;
+  top:1;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+
+/* recipeview.html */
+
+#view-header {
+  padding-top: 35px;
+  font-size: 70px;
+  color: rgb(73, 78, 74);
+  font-family: 'Niconne', cursive;
+
+}
