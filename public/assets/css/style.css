@@ -40,9 +40,6 @@
   font-weight: bold;
   font-size: 35px;
   color: rgb(73, 78, 74);
-
-  /* font-family: 'Oswald', cursive; */
-
   font-family: 'Niconne', cursive;
 }
 
@@ -57,57 +54,37 @@
   border-color: rgb(88, 141, 129);
   padding-bottom: 50pt;
   background: linear-gradient(45deg, #b2ac88 10%, #daded4 90%);
-  
 }
 
-
-
-
-  
-
 @media (max-width: 768px) {
- .carousel-inner .item {
- 
+  .carousel-inner .item {
     height: 400px;
   }
 }
 
 .carousel-caption {
-  
-  position: fixed;  
+  position: fixed;
 }
- 
 
 .carousel-caption p {
-color: rgb(26, 36, 28);
-font-family: 'Alegreya Sans', sans-serif; 
-font-size: 50px;
-font-weight: bold;
-text-align: center; 
-
+  color: rgb(26, 36, 28);
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
 }
 
-
 .carousel-item {
- 
   bottom: 0;
   border-image: none;
   height: 400px;
   width: 100%;
-  
-  
-
-  
- 
 }
 
 .carousel-item img {
   width: 100%;
   height: 400px;
-  min-height: 400px;  
-  
- 
-
+  min-height: 400px;
 }
 
 .search {
@@ -117,7 +94,7 @@ text-align: center;
   padding-bottom: 50pt;
   padding-top: 20pt;
   /* font-family: 'Lilita One', cursive; */
- 
+
   font-family: 'Alegreya Sans', sans-serif;
   font-size: 50px;
   font-weight: bolder;
@@ -147,12 +124,10 @@ text-align: center;
   background: #a3bcb6;
 }
 
-
 /* recipead.html */
 
 .details {
-
-  margin:10%;
+  margin: 10%;
   padding-bottom: 8%;
   box-sizing: border-box;
   align-items: center;
@@ -165,7 +140,7 @@ text-align: center;
   padding-bottom: 50pt;
   padding-top: 100pt;
   /* font-family: 'Lilita One', cursive; */
- 
+
   font-family: 'Alegreya Sans', sans-serif;
   font-size: 20px;
   font-weight: bolder;
@@ -173,11 +148,10 @@ text-align: center;
   background: linear-gradient(45deg, #b2ac88 10%, #daded4 90%);
   margin: 5;
   padding: 0;
-  top:1;
+  top: 1;
   box-sizing: border-box;
   align-items: center;
 }
-
 
 /* recipeview.html */
 
@@ -186,5 +160,20 @@ text-align: center;
   font-size: 70px;
   color: rgb(73, 78, 74);
   font-family: 'Niconne', cursive;
+}
 
+/* .preview-images {
+  display: flex;
+  justify-content: center;
+} */
+
+#uploadedImage {
+  padding-left: auto;
+  padding-right: auto;
+  height: 500px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  ;
 }
