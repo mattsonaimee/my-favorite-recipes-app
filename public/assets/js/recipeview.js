@@ -62,10 +62,8 @@ $(function () {
         'Content-Type': 'application/json'
       }
 
-    }).then(res => {
-      console.log(`this is the response: ${res}`)
-      // generatePreview(res);
-    })
+    }).then(res => res.json())
+      .then(data => { console.log(data) })
   }
 
   // Create HTML rows for the recipe container
