@@ -63,7 +63,10 @@ $(function () {
       }
 
     }).then(res => res.json())
-      .then(data => { console.log(data) })
+      .then(data => {
+        console.log(data);
+        generatePreview(data);
+      });
   }
 
   // Create HTML rows for the recipe container
@@ -158,18 +161,23 @@ $(function () {
     viewRecipe(this.value);
   };
 
-  const testRecipe = {
-    name: 'burger'
-
-  }
   function generatePreview (recipe) {
-    $('<h2>').addClass('preview-title').text(testRecipe.name);
-    $('<div>').addClass('col-lg-6 details').text('Details: ');
-    $('<div>').addClass('col-lg-6 image');
-    $('')
-  };
-
-  generatePreview(testRecipe);
-
-
+    const recipeName = $('<h2>').addClass('preview-title').text(`${recipe.name}`);
+    const detailsDiv = $('<div>').addClass('col-lg-4 details');
+    const imageDiv = $('<div>').addClass('col-lg-2 image');
+    detailsDiv.text(`
+    Ingredients: ${recipe.ingredients} \n
+    Directions: ${recipe.directions} \n
+    URL: ${recipe.URL} \n
+    Vegetarian?: ${recipe.vegetarian} \n
+    Vegan?: ${recipe.vegan} \n
+    Gluten_Free?: ${recipe.gluten_free} \n
+    Favorite Recipe?: ${recipe.favorite_recipe} \n
+    Add To Shopping List? ${recipe.add_to_shopping_list}
+    `);
+    imageDiv.attr('src', `${recipe.image}`);
+    recipeDetails.append(recipeName, detailsDiv, imageDiv);
+    // recipeDetails.attr('data-post', JSON.stringify(recipe));
+    return recipeDetails;
+  }
 })
