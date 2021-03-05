@@ -188,36 +188,37 @@ $(function () {
 
   // Handle when we click the view recipe button
   function handleRecipeView () {
+    recipeDetails.empty();
     console.log('handle view recipe function was invoked');
     console.log(`current recipe: ${this.value}`);
     viewRecipe(this.value);
   }
 
   // Front end call to VIEW an image
-  const imageRender = async (req, res) => {
-    try {
-      const recipes = await Recipe.findAll({
-        include: [
-          {
-            model: Recipe,
-            as: 'Images'
-          }
-        ]
-      })
-        .then(recipes => {
-          recipes.map(recipe => {
-            const recipeImage = recipe.imageData.toString('base64')
-            recipe['data'] = recipeImage
-          });
-          return recipes;
-        })
-        .then(recipes => {
-          return res.status(200).json({ recipes: recipes });
-        });
-    } catch (error) {
-      return res.status(500).send(error.message);
-    }
-  };
+  // const imageRender = async (req, res) => {
+  //   try {
+  //     const recipes = await Recipe.findAll({
+  //       include: [
+  //         {
+  //           model: Recipe,
+  //           as: 'Images'
+  //         }
+  //       ]
+  //     })
+  //       .then(recipes => {
+  //         recipes.map(recipe => {
+  //           const recipeImage = recipe.imageData.toString('base64')
+  //           recipe['data'] = recipeImage
+  //         });
+  //         return recipes;
+  //       })
+  //       .then(recipes => {
+  //         return res.status(200).json({ recipes: recipes });
+  //       });
+  //   } catch (error) {
+  //     return res.status(500).send(error.message);
+  //   }
+  // };
 
   // function generatePreview (recipe) {
   //   const recipeName = $('<h2>')
