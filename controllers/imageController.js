@@ -17,7 +17,7 @@ const uploadFiles = async (req, res) => {
       name: req.file.originalname,
       // get data from images folder
       data: fs.readFileSync(
-        __basedir + '/public/images/uploads/' + req.file.filename
+        __basedir + '/public/images/uploads/' + req.file.buffer
       )
       // write file to images folder with name & data
     }).then((image) => {
