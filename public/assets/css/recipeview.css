@@ -1,0 +1,113 @@
+body {
+  background: linear-gradient(45deg, #b2ac88 10%, #daded4 90%);
+ 
+}
+
+
+.navbar {
+  background-color: aliceblue;
+  text-align: end;
+  padding-bottom: 30px;
+  font-size: 20px;
+}
+.nav-link {
+  color: rgb(44, 63, 44);
+  font-weight: bolder;
+  text-align: right;
+  font-variant-caps: normal;
+}
+
+h1 {
+  padding-top: 55px;
+  font-size: 75px;
+  color: rgb(73, 78, 74);
+  font-family: 'Pacifico', cursive;
+  text-decoration: underline;
+  padding-bottom: 20px;
+}
+
+.logo-signup {
+  max-width: 200px;
+  max-height: 150px;
+}
+
+.details {
+  margin: 10%;
+  padding-bottom: 8%;
+  box-sizing: border-box;
+  align-items: center;
+  background: #b2bda1;
+  
+}
+
+#details-section {
+    margin: 10%;
+    padding-bottom: 8%;
+    box-sizing: border-box;
+    align-items: center;
+    background: #b2bda1;
+    
+  }
+
+#recipedetails-section {
+    margin: 10%;
+    padding-bottom: 8%;
+    box-sizing: border-box;
+    align-items: center;
+    background: #b2bda1;
+    
+  }
+
+#sav-header {
+  padding-top: 10px;
+  font-size: 55px;
+  text-decoration: underline;
+  color: rgb(73, 78, 74);
+  font-family: 'Niconne', cursive;
+}
+
+#rec-header {
+    padding-top: 10px;
+    font-size: 55px;
+    text-decoration: underline;
+    color: rgb(73, 78, 74);
+    font-family: 'Niconne', cursive;
+  }
+
+
+.card {
+  border-style: solid;
+  border-width: 8pt;
+  border-color: rgb(88, 141, 129);
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+  background: #b2bda1;
+  box-sizing: border-box;
+  align-items: center;
+  padding-bottom: 20pt;
+
+}
+
+
+
+
+
+
+padding: 0;
+top: 1;
+box-sizing: border-box;
+align-items: center;
+}
+
+#uploadedImage {
+    padding-left: auto;
+    padding-right: auto;
+    height: 500px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    ;
+  }
