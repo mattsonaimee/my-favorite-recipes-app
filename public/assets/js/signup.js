@@ -34,11 +34,11 @@ $(document).ready(function () {
         window.location.replace('/app');
         // If there's an error, handle it by throwing up a bootstrap alert
       })
-      .catch(handleLoginErr);
+      .catch(handleSignupErr);
   }
 
-  function handleLoginErr (err) {
-    $('#alert .msg').text('Email Invalid');
+  function handleSignupErr (err) {
+    $('#alert .msg').text('Invalid Credentials');
     console.log(err.responseJSON);
     $('#alert').fadeIn(500);
   }

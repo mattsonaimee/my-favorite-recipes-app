@@ -33,8 +33,12 @@ $(document).ready(function () {
         window.location.replace('/app');
         // If there's an error, log the error
       })
-      .catch(function (err) {
-        console.log(err);
-      });
+      .catch(handleLoginErr);
+  }
+
+  function handleLoginErr (err) {
+    $('#alert .msg').text('Invalid credentials');
+    console.log(err.responseJSON);
+    $('#alert').fadeIn(500);
   }
 });
