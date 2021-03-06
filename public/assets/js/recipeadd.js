@@ -4,7 +4,6 @@
 // Wait for the DOM to completely load before we run our JS
 $(function () {
   console.log('DOM loaded!');
-  
 
   // Get references to the recipe items
   const recipeNameInput = $('#recipe-name');
@@ -29,7 +28,7 @@ $(function () {
       const userLoggedInId = data.id;
       console.log('here is the id of the user logged in ', userLoggedInId);
       return userLoggedInId;
-    })
+    });
   }
 
   function getRecipeId () {
@@ -37,15 +36,14 @@ $(function () {
       const currentRecipeId = data.id;
       console.log('here is the id of the user logged in ', currentRecipeId);
       return currentRecipeId;
-    })
+    });
   }
 
   let updating = false;
 
   // Get recipe data for editing/adding
-  const getRecipeData = (id, type) => {
-    const queryUrl =
-      type === 'recipe' ? `/api/recipes/${id}` : `/api/users/${id}`;
+  const getRecipeData = (id) => {
+    const queryUrl = `/api/recipes/${id}`;
     fetch(queryUrl, {
       method: 'GET',
       headers: {
@@ -56,17 +54,17 @@ $(function () {
       .then((data) => {
         if (data) {
           console.log('Success in getting post: ', data);
-        
+
           // Populate the form for editing
-          recipeNameInput.val() = data.name;
-          ingredientsInput.val() = data.ingredients;
-          directionsInput.val() = data.directions;
-          urlInput.val() = data.URL;
-          vegetarianInput.prop('checked') = data.vegetarian;
-          veganInput.prop('checked')= data.vegan;
-          glutenInput.prop('checked') = data.gluten_free;
-          favoriteRecipeInput.prop('checked') = data.favorite_recipe;
-          shoppingListInput.prop('checked') = data.add_to_shopping_list;
+          recipeNameInput.val(data.name);
+          ingredientsInput.val(data.ingredients);
+          directionsInput.val(data.directions);
+          urlInput.val(data.URL);
+          vegetarianInput.prop('checked', data.vegetarian);
+          veganInput.prop('checked', data.vegan);
+          glutenInput.prop('checked', data.gluten_free);
+          favoriteRecipeInput.prop('checked', data.favorite_recipe);
+          shoppingListInput.prop('checked', data.add_to_shopping_list);
 
           // We are updating
           updating = true;
@@ -78,7 +76,7 @@ $(function () {
   // If recipe exists, grab the content of the recipe
   if (url.indexOf('?recipe_id=') !== -1) {
     recipeId = url.split('=')[1];
-    getRecipeData(recipeId, 'recipe');
+    getRecipeData(recipeId);
   }
 
   // Event handler for when the post for is submitted
@@ -93,7 +91,7 @@ $(function () {
       !urlInput.val()
     ) {
       alert(
-        `You must enter a value for 'Name', 'Ingredients', 'Directions', and 'URL'!`
+        "You must enter a value for 'Name', 'Ingredients', 'Directions', and 'URL'!"
       );
     }
 
@@ -117,20 +115,22 @@ $(function () {
       newRecipe.id = recipeId;
       updateRecipe(newRecipe);
     } else {
-      const data = $('#uploadedImage').attr('src')
-      const name = $('#uploadedImage').attr('data-name')
-      const type = $('#uploadedImage').attr('data-type')
+      const data = $('#uploadedImage').attr('src');
+      const name = $('#uploadedImage').attr('data-name');
+      const type = $('#uploadedImage').attr('data-type');
       const imageObject = {
-        data, name, type
-      }
-      console.log('This is the imageObject', imageObject)
+        data,
+        name,
+        type
+      };
+      console.log('This is the imageObject', imageObject);
       submitRecipe(newRecipe, imageObject);
     }
   };
 
   // Attach an event listener to the form on submit; will trigger handleFormSubmit
   $('#add-recipe').on('submit', handleFormSubmit);
-  
+
   // // Attach an event listener to the image on change; will save file to global variable
   // $('#input-files').on('change', function () {
   //   fileData = this.files[0];
@@ -143,7 +143,7 @@ $(function () {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({recipe, image})
+      body: JSON.stringify({ recipe, image })
     })
       .then(() => {
         window.location.href = '/view';
@@ -186,12 +186,12 @@ $(function () {
       }
     }
   };
- 
-  $(function() {
-     image.change(function (){
+
+  $(function () {
+    image.change(function () {
       console.log('clicked');
-       imagesPreview(this, 'div.preview-images');
-       $("#upload").submit();
-     });
+      imagesPreview(this, 'div.preview-images');
+      $('#upload').submit();
+    });
   });
 });
