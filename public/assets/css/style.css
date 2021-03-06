@@ -56,14 +56,33 @@
   background: linear-gradient(45deg, #b2ac88 10%, #daded4 90%);
 }
 
+.carousel-container {
+  padding: 0 0 60px 0;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  overflow: visible;
+}
+
+
+
+
 @media (max-width: 768px) {
   .carousel-inner .item {
     height: 400px;
   }
 }
 
+.carousel-inner img {
+  position: absolute;
+}
+
+
 .carousel-caption {
-  position: fixed;
+  position: relative;
+  float: inline-end;
+  
 }
 
 .carousel-caption p {
@@ -71,7 +90,9 @@
   font-family: 'Alegreya Sans', sans-serif;
   font-size: 50px;
   font-weight: bold;
-  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  vertical-align: bottom;
 }
 
 .carousel-item {
@@ -124,7 +145,7 @@
   background: #a3bcb6;
 }
 
-/* recipead.html */
+/* recipeadd.html */
 
 .details {
   margin: 10%;
