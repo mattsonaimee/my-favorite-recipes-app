@@ -87,8 +87,7 @@ $(function () {
     if (
       !recipeNameInput.val() ||
       !ingredientsInput.val() ||
-      !directionsInput.val() ||
-      !urlInput.val()
+      !directionsInput.val()
     ) {
       alert(
         "You must enter a value for 'Name', 'Ingredients', 'Directions', and 'URL'!"
