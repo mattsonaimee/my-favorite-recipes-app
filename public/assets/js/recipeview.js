@@ -157,7 +157,6 @@ $(function () {
     // newRecipeCard.append(newRecipeCardBody);
     newRecipeCard.attr('data-post', JSON.stringify(recipe));
 
-    console.log(newRecipeCard[0]);
     return newRecipeCard;
   };
 
