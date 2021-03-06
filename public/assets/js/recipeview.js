@@ -65,9 +65,15 @@ $(function () {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        const TYPED_ARRAY = new Uint8Array(data.Images[0].data.data);
+        const STRING_CHAR = String.fromCharCode.apply(null, TYPED_ARRAY);
+        const base64String = btoa(STRING_CHAR);
+        // var b64encoded = btoa(String.fromCharCode.apply(null, data.Images[0].data.data));
+        // console.log(b64encoded);
         // const imageString = data.Images[0].data.data.toString('base64');
         // const finalImage = decodeURI(imageString);
         // console.log(imageString);
+        // console.log(finalImage);
         function generatePreview (recipe) {
           const recipeName = $('<h2>')
             .addClass('preview-title')
@@ -77,7 +83,7 @@ $(function () {
           detailsDiv.html(`
           <p> Ingredients: ${recipe.ingredients} </p>
           <p> Directions: ${recipe.directions} </p>
-          <p> URL: ${recipe.URL} </p>
+          <p> URL: <a href='https://${recipe.URL}'>${recipe.URL}</a> </p>
           <p> Vegetarian?: ${recipe.vegetarian} </p>
           <p> Vegan?: ${recipe.vegan} </p>
           <p> Gluten_Free?: ${recipe.gluten_free} </p>
@@ -85,8 +91,10 @@ $(function () {
           <p> Add To Shopping List?: ${recipe.add_to_shopping_list}
           `);
           recipeDetails.append(recipeName, detailsDiv, imageDiv);
-          // const image = $('<img>').attr('src', 'data:image/jpeg;base64, ' + finalImage)
-          imageDiv.append(image);
+          const image = $('<img>').attr('src', 'data:image/*;base64, ' + base64String)
+          const imageSRC = image.prop('src');
+          console.log(imageSRC);
+          // imageDiv.append(imageSRC);
           return recipeDetails + imageDiv;
         }
         generatePreview(data);
