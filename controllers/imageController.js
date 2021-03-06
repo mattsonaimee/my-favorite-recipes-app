@@ -8,6 +8,7 @@ const uploadFiles = async (req, res) => {
   try {
     console.log(req.file);
 
+    // eslint-disable-next-line eqeqeq
     if (req.file == undefined) {
       return res.send('You must select a file.');
     }
@@ -17,7 +18,7 @@ const uploadFiles = async (req, res) => {
       name: req.file.originalname,
       // get data from images folder
       data: fs.readFileSync(
-        __basedir + '/public/images/uploads/' + req.file.buffer
+        __basedir + '/public/images/uploads/' + req.file.filename
       )
       // write file to images folder with name & data
     }).then((image) => {

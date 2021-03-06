@@ -68,7 +68,6 @@ $(function () {
         const imageString = data.Images[0].data.data.toString('base64');
         const finalImage = decodeURI(imageString);
         console.log(imageString);
-        // generatePreview(data);
         function generatePreview (recipe) {
           const recipeName = $('<h2>')
             .addClass('preview-title')
@@ -155,10 +154,6 @@ $(function () {
   // Helper function to display something when there are no recipes
   const displayEmpty = (id) => {
     const query = window.location.search;
-    let partial = '';
-    if (id) {
-      partial = ` for recipe #${id}`;
-    }
 
     recipeNames.text(' ');
     const styles = {
@@ -167,8 +162,8 @@ $(function () {
     };
     const messageH2 = $('<h2>')
       .css(styles)
-      .text(
-        `No recipes yes${partial}, navigate <a href='/recipes${query}'>here</a> in order to get started.`
+      .html(
+        `No recipes yet navigate <a href='/add${query}'>here</a> in order to get started.`
       );
     recipeNames.append(messageH2);
   };
@@ -219,26 +214,4 @@ $(function () {
   //     return res.status(500).send(error.message);
   //   }
   // };
-
-  // function generatePreview (recipe) {
-  //   const recipeName = $('<h2>')
-  //     .addClass('preview-title')
-  //     .text(`${recipe.name}`);
-  //   const detailsDiv = $('<div>').addClass('col-lg-10 details');
-  //   const imageDiv = $('<div>').addClass('col-lg-2 image');
-  //   detailsDiv.html(`
-  //   <p> Ingredients: ${recipe.ingredients} </p>
-  //   <p> Directions: ${recipe.directions} </p>
-  //   <p> URL: ${recipe.URL} </p>
-  //   <p> Vegetarian?: ${recipe.vegetarian} </p>
-  //   <p> Vegan?: ${recipe.vegan} </p>
-  //   <p> Gluten_Free?: ${recipe.gluten_free} </p>
-  //   <p> Favorite Recipe?: ${recipe.favorite_recipe} </p>
-  //   <p> Add To Shopping List?: ${recipe.add_to_shopping_list}
-  //   `);
-  //   recipeDetails.append(recipeName, detailsDiv, imageDiv);
-  //   console.log(imageRender(`${this.id}`));
-  //   // recipeDetails.attr('data-post', JSON.stringify(recipe));
-  //   return recipeDetails + imageDiv;
-  // }
 });
