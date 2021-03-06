@@ -122,7 +122,6 @@ $(function () {
         name,
         type
       };
-      console.log('This is the imageObject', imageObject);
       submitRecipe(newRecipe, imageObject);
     }
   };

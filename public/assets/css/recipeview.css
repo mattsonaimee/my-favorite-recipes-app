@@ -1,14 +1,13 @@
 body {
   background: linear-gradient(45deg, #b2ac88 10%, #daded4 90%);
- 
 }
-
 
 .navbar {
   background-color: aliceblue;
   text-align: end;
   font-size: 20px;
 }
+
 .nav-link {
   color: rgb(44, 63, 44);
   font-weight: bolder;
@@ -88,17 +87,6 @@ h1 {
   align-items: center;
   padding-bottom: 20pt;
 
-}
-
-
-
-
-
-
-padding: 0;
-top: 1;
-box-sizing: border-box;
-align-items: center;
 }
 
 #uploadedImage {
