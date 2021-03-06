@@ -91,10 +91,12 @@ $(function () {
           <p> Add To Shopping List?: ${recipe.add_to_shopping_list}
           `);
           recipeDetails.append(recipeName, detailsDiv, imageDiv);
-          const image = $('<img>').attr('src', 'data:image/*;base64, ' + base64String)
+          // const image = $('<img>').attr('src', 'data:image/*;base64, ' + base64String)
+          const image = new Image();
+          image.src = URL.createObjectURL(base64String)
           const imageSRC = image.prop('src');
           console.log(imageSRC);
-          // imageDiv.append(imageSRC);
+          imageDiv.append(image);
           return recipeDetails + imageDiv;
         }
         generatePreview(data);
