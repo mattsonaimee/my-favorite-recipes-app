@@ -54,9 +54,11 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       }
     })
+  };
 
-    // Associating Recipe with Images
-    // When a Recipe is deleted, also delete any associated Images
+  // Associating Recipe with Images
+  // When a Recipe is deleted, also delete any associated Images
+  Recipe.associate = (models) => {
     Recipe.hasMany(models.Image, {
       onDelete: 'cascade'
     })
