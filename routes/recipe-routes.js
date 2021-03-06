@@ -8,7 +8,7 @@ module.exports = (app) => {
       console.log(query.UserId);
     }
     db.Recipe.findAll({
-      where: query,
+      where: query.UserId,
       include: [db.Image]
     }).then((dbRecipe) => {
       // console.log('Here is the findAll DB Recipe: ', dbRecipe);
