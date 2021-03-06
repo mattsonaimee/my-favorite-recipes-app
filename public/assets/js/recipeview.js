@@ -65,9 +65,9 @@ $(function () {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        const imageString = data.Images[0].data.data.toString('base64');
-        const finalImage = decodeURI(imageString);
-        console.log(imageString);
+        // const imageString = data.Images[0].data.data.toString('base64');
+        // const finalImage = decodeURI(imageString);
+        // console.log(imageString);
         function generatePreview (recipe) {
           const recipeName = $('<h2>')
             .addClass('preview-title')
@@ -85,7 +85,7 @@ $(function () {
           <p> Add To Shopping List?: ${recipe.add_to_shopping_list}
           `);
           recipeDetails.append(recipeName, detailsDiv, imageDiv);
-          const image = $('<img>').attr('src', 'data:image/jpeg;base64, ' + finalImage)
+          // const image = $('<img>').attr('src', 'data:image/jpeg;base64, ' + finalImage)
           imageDiv.append(image);
           return recipeDetails + imageDiv;
         }
@@ -170,6 +170,7 @@ $(function () {
 
   // Handle when we click the edit recipe button
   function handleRecipeDelete () {
+    recipeDetails.empty();
     console.log('handle delete recipe function was invoked');
     console.log(`current recipe: ${this.value}`);
     deleteRecipe(this.value);
@@ -178,7 +179,7 @@ $(function () {
   // Handle when we click the edit recipe button
   function handleRecipeEdit () {
     console.log('handle edit recipe function was invoked');
-    window.location.href = `/recipes?recipe_id=${this.value}`;
+    window.location.href = `/add?recipe_id=${this.value}`;
   }
 
   // Handle when we click the view recipe button
