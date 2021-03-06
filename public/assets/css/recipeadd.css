@@ -1,0 +1,89 @@
+* body {
+  background: linear-gradient(45deg, #b2ac88 10%, #daded4 90%);
+}
+
+.navbar {
+  background-color: aliceblue;
+  text-align: end;
+}
+.nav-link {
+  color: rgb(44, 63, 44);
+  font-weight: bolder;
+  text-align: right;
+  font-variant-caps: normal;
+}
+
+h1 {
+  padding-top: 55px;
+  font-size: 75px;
+  color: rgb(73, 78, 74);
+  font-family: 'Pacifico', cursive;
+  text-decoration: underline;
+}
+
+.logo-signup {
+  max-width: 200px;
+  max-height: 150px;
+}
+
+.btn {
+  background-color: rgb(88, 141, 129);
+  color: white;
+}
+
+p {
+  text-shadow: darkgray;
+  font-size: 65px;
+  font-weight: bold;
+  color: rgb(73, 78, 74);
+  font-family: 'Niconne', cursive;
+  margin-bottom: 20pt;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.details {
+  margin: 10%;
+  padding-bottom: 8%;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+#details-section {
+  padding-bottom: 8%;
+  box-sizing: border-box;
+  align-items: center;
+  background: #b2bda1;
+}
+.card {
+  border-style: solid;
+  border-width: 8pt;
+  border-color: rgb(88, 141, 129);
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bolder;
+  text-align: center;
+  background: #b2bda1;
+  box-sizing: border-box;
+  align-items: center;
+  padding-bottom: 10pt;
+}
+
+#upload-header {
+  padding-top: 10px;
+  font-size: 40px;
+  text-decoration: underline;
+  color: rgb(73, 78, 74);
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+#uploadedImage {
+  padding-left: auto;
+  padding-right: auto;
+  height: 500px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

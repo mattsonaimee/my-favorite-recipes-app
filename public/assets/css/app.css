@@ -1,0 +1,134 @@
+* body {
+
+    background: linear-gradient(45deg, #b2ac88 10%, #daded4 90%);
+
+  }
+  
+  .navbar {
+    background-color: aliceblue;
+    text-align: end;
+    font-size: 20px;
+  }
+  .nav-link {
+    color: rgb(44, 63, 44);
+    font-weight: bolder;
+    text-align: right;
+    font-variant-caps: normal;
+  }
+
+  .logo h1 {
+    padding-top: 35px;
+    font-size: 50px;
+    color: rgb(73, 78, 74);
+    font-family: 'Pacifico', cursive;
+  }
+  .logo h3 {
+    padding-top: 1pt;
+    text-align: left;
+    margin-left: 10rem;
+  
+    font-size: 35px;
+    color: rgb(73, 78, 74);
+    font-family: 'Niconne', cursive;
+  }
+  
+  .logo-signup {
+    max-width: 200px;
+    max-height: 150px;
+  }
+  
+  .carousel {
+    border-style: solid;
+    border-width: 10pt;
+    border-color: rgb(88, 141, 129);
+    padding-bottom: 10pt;
+    background:  #b2bda1 60%;
+  }
+  
+  
+  .carousel-caption  {
+    color: rgb(68, 71, 69);
+    font-family:'Lilita One', cursive;
+   
+    font-size: 30px;
+   
+   bottom:-40px; 
+  
+  }
+  
+  .carousel-item {
+    bottom: 10;
+    border-image: none;
+    height: 400px;
+    width: 100%;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 400px;
+    min-height: 400px;
+    position: absolute;
+    padding-bottom: 30px;
+    padding-top: 10px;
+  }
+  
+  .search {
+    /* border-style: solid; */
+    border-width: 8pt;
+    border-color: rgb(88, 141, 129);
+    /* padding-bottom: 50pt;
+    padding-top: 20pt; */
+    /* font-family: 'Lilita One', cursive; */
+  
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+  
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+    align-items: center;
+  }
+  
+  #cooking-label-title {
+    text-shadow: darkgray;
+    font-size: 65px;
+    font-weight: bold;
+    color: rgb(73, 78, 74);
+    font-family: 'Niconne', cursive;
+    margin-bottom: 20pt;
+  }
+  
+  .btn {
+    background-color: rgb(88, 141, 129);
+    color: white;
+    
+  }
+  
+  .footer {
+    background: #a3bcb6;
+  }
+  
+  /* recipeadd.html */
+  
+
+  .card {
+    border-style: solid;
+    border-width: 8pt;
+    border-color: rgb(88, 141, 129);
+    padding-bottom: 50pt;
+    padding-top: 100pt;
+    /* font-family: 'Lilita One', cursive; */
+  
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+    background:  #b2bda1;
+  
+    padding: 0;
+    top: 1;
+    box-sizing: border-box;
+    align-items: center;
+  }
