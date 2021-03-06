@@ -6,13 +6,13 @@
 }
 
 body {
-       font-family: 'Oswald', cursive;
+    font-family: 'Oswald', cursive;
     font-size: 16px;
     background-size: 200% 100% !important;
     animation: move 10s ease infinite;
     transform: translate3d(0, 0, 0);
     background: linear-gradient(45deg, #B2AC88 10%,  #daded4 90%);
-    height: 100vh;
+    height: auto;
 }
 
 a {
