@@ -175,6 +175,7 @@ $(function () {
       for (i = 0; i < filesAmount; i++) {
         const reader = new FileReader();
         reader.onload = function (event) {
+          console.log(event.target.result);
           $($.parseHTML('<img>'))
             .attr('src', event.target.result)
             .attr('data-name', input.files[0].name)
