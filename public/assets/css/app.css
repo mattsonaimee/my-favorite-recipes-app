@@ -1,21 +1,13 @@
-/* App.HTML Styling */
-
 * body {
-    /* background-color: whitesmoke; */
-   
-    /* animation: move 10s ease infinite; */
-    /* transform: translate3d(0, 0, 0); */
+
     background: linear-gradient(45deg, #b2ac88 10%, #daded4 90%);
-    /* height: 100vh; */
-    /* margin: 0; */
-    /* padding: 0; */
-    /* box-sizing: border-box; */
-    /* align-items: center; */
+
   }
   
   .navbar {
     background-color: aliceblue;
     text-align: end;
+    font-size: 20px;
   }
   .nav-link {
     color: rgb(44, 63, 44);
@@ -23,13 +15,10 @@
     text-align: right;
     font-variant-caps: normal;
   }
-  /* .logo {
-    color: #3c403d;
-  
-  } */
+
   .logo h1 {
     padding-top: 35px;
-    font-size: 70px;
+    font-size: 50px;
     color: rgb(73, 78, 74);
     font-family: 'Pacifico', cursive;
   }
@@ -44,8 +33,8 @@
   }
   
   .logo-signup {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 200px;
+    max-height: 150px;
   }
   
   .carousel {
@@ -123,13 +112,7 @@
   
   /* recipeadd.html */
   
-  .details {
-    margin: 10%;
-    padding-bottom: 8%;
-    box-sizing: border-box;
-    align-items: center;
-  }
-  
+
   .card {
     border-style: solid;
     border-width: 8pt;
