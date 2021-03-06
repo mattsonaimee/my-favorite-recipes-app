@@ -1,106 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Everyday Recipes | Login</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Everyday Recipes | Login</title>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-    crossorigin="anonymous" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+            integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+            crossorigin="anonymous" />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-    href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Lilita+One&family=Oswald&family=Niconne&family=Pacifico&display=swap"
-    rel="stylesheet">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Lilita+One&family=Oswald&family=Niconne&family=Pacifico&display=swap"
+            rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-    <!-- Custom CSS -->
-    <link href="assets/css/signup.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="assets/css/login.css" rel="stylesheet">
 
-    <!-- Scripts -->
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/55d3b7ba4c.js" crossorigin="anonymous"></script>
-    <script defer src="./assets/js/login.js"></script>
-</head>
+        <!-- Scripts -->
+        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/55d3b7ba4c.js" crossorigin="anonymous"></script>
+        <script defer src="./assets/js/login.js"></script>
+    </head>
 
-<body>
+    <body>
 
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded=" false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link fas fa-utensils" href="/signup"> Sign Up</a>
-                    </li>
-                </ul>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded=" false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link fas fa-utensils" href="/signup"> Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <div class="container container-fluid">
-        <div class="jumbotron">
-            <div class="row">
-                <div class="col-md-12">
-                    <header class="user-header">
-                        <img class="logo-signup" src="./images/Logo(1).png" alt="tempLogo" />
-                        <h1 class="user-title">Login to Everyday Recipes</h1>
+        <div class="container container-fluid">
+            <div class="jumbotron">
+
+                <div class="row">
+
+                    <div class="col-md-10">
+                        <header class="user-header">
+                            <img class="logo-signup" src="./images/Logo(1).png" alt="tempLogo" />
                         </header>
-                    <form class="login">
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="email-input" placeholder="Email">
+                        <br>
+                        <div class="app-desc-text">
+                            <p> Welcome to Everyday Recipes, a
+                                place where everyday home cooks, people just like you, can access their very own
+                                personal recipe app.
+                                <br>
+                             
+                                Everyday Recipes has been created, tried and tested by home cooks, for home cooks so
+                                whether you love to create, or just want to cook, Everyday Recipes is the place for you.
+                                <br>
+                                <br>
+                                With Everyday Recipes, you can:
+                            <ul class="ul">
+                                <li>Browse your collection of recipes, or search by specifics - ingredients, diet
+                                    restrictions, favorites and more</li>
+                                <li>Create and store your own recipes and help others to become better cooks</li>
+                                <li>Upload photos of the recipes you cook and inspire others to try them too</li>
+                                <li>Build a limitless collection of recipes you find, share and cook - it’s your own
+                                    personal cookbook</li>
+                            </ul>
+                            </p>
                         </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" id="password-input" placeholder="Password">
-                        </div>
-                        <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                            <span class="sr-only">Error:</span> <span class="msg"></span>
-                        </div>
-                        <button type="submit" class="btn btn-default">Login</button>
-                    </form>
-                    <br>
-                    <p class="user-title">Or sign up <a href="./signup.html">here</a></p>
-                    <br>
+                    </div>
+
+
+
                 </div>
-                <div class="col">
-                    <p>Looking to save your favorite recipes? Look no further. Welcome to Everyday Recipes, a place where everyday home cooks, people just like you, can access their very own personal recipe app.
-                    <br>
-                    <br>
-                    Everyday Recipes has been created, tried and tested by home cooks, for home cooks so whether you love to create, or just want to cook, Everyday Recipes is the place for you.
-                    <br>
-                    <br>
-                    With Everyday Recipes, you can:
-                        <ul>
-                            <li>Browse your collection of recipes, or search by specifics - ingredients, diet restrictions, favorites and more</li>
-                            <li>Create and store your own recipes and help others to become better cooks</li>
-                            <li>Upload photos of the recipes you cook and inspire others to try them too</li>
-                            <li>Build a limitless collection of recipes you find, share and cook - it’s your own personal cookbook</li>
-                        </ul>
-                    </p>
+                <div class="row">
+                    <div class="col-md-10">
+
+                        <form class="login">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email-input" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password-input" placeholder="Password">
+                            </div>
+                            <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span> <span class="msg"></span>
+                            </div>
+                            <button type="submit" class="btn btn-default" id="btn-lgn">Login</button>
+                        </form>
+                        <br>
+                        <p class="user-title">Or sign up <a href="./signup.html">here</a></p>
+                        <br>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- JavaScript Bundle -->
-    <script src=“https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js”
-        integrity=“sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin=“anonymous”>
-    </script>
+        <!-- JavaScript Bundle -->
+        <script src=“https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js”
+            integrity=“sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin=“anonymous”>
+            </script>
 
-</body>
+    </body>
 
 </html>
