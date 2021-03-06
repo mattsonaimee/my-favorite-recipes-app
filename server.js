@@ -36,7 +36,7 @@ require('./routes/recipe-routes.js')(app);
 require('./routes/image-routes.js')(app);
 
 // listening
-db.sequelize.sync({ force: false }).then(function () {
+db.sequelize.sync({ force: true }).then(function () {
   app.listen(PORT, function () {
     console.log('Listening on port %s. Visit http://localhost:%s/ in your browser.', PORT, PORT);
   });

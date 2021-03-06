@@ -68,7 +68,6 @@ $(function () {
         const imageString = data.Images[0].data.data.toString('base64');
         const finalImage = decodeURI(imageString);
         console.log(imageString);
-        // generatePreview(data);
         function generatePreview (recipe) {
           const recipeName = $('<h2>')
             .addClass('preview-title')
@@ -155,10 +154,6 @@ $(function () {
   // Helper function to display something when there are no recipes
   const displayEmpty = (id) => {
     const query = window.location.search;
-    let partial = '';
-    if (id) {
-      partial = ` for recipe #${id}`;
-    }
 
     recipeNames.text(' ');
     const styles = {
@@ -167,8 +162,8 @@ $(function () {
     };
     const messageH2 = $('<h2>')
       .css(styles)
-      .text(
-        `No recipes yes${partial}, navigate <a href='/recipes${query}'>here</a> in order to get started.`
+      .html(
+        `No recipes yet navigate <a href='/add${query}'>here</a> in order to get started.`
       );
     recipeNames.append(messageH2);
   };
@@ -188,56 +183,35 @@ $(function () {
 
   // Handle when we click the view recipe button
   function handleRecipeView () {
+    recipeDetails.empty();
     console.log('handle view recipe function was invoked');
     console.log(`current recipe: ${this.value}`);
     viewRecipe(this.value);
   }
 
   // Front end call to VIEW an image
-  const imageRender = async (req, res) => {
-    try {
-      const recipes = await Recipe.findAll({
-        include: [
-          {
-            model: Recipe,
-            as: 'Images'
-          }
-        ]
-      })
-        .then(recipes => {
-          recipes.map(recipe => {
-            const recipeImage = recipe.imageData.toString('base64')
-            recipe['data'] = recipeImage
-          });
-          return recipes;
-        })
-        .then(recipes => {
-          return res.status(200).json({ recipes: recipes });
-        });
-    } catch (error) {
-      return res.status(500).send(error.message);
-    }
-  };
-
-  // function generatePreview (recipe) {
-  //   const recipeName = $('<h2>')
-  //     .addClass('preview-title')
-  //     .text(`${recipe.name}`);
-  //   const detailsDiv = $('<div>').addClass('col-lg-10 details');
-  //   const imageDiv = $('<div>').addClass('col-lg-2 image');
-  //   detailsDiv.html(`
-  //   <p> Ingredients: ${recipe.ingredients} </p>
-  //   <p> Directions: ${recipe.directions} </p>
-  //   <p> URL: ${recipe.URL} </p>
-  //   <p> Vegetarian?: ${recipe.vegetarian} </p>
-  //   <p> Vegan?: ${recipe.vegan} </p>
-  //   <p> Gluten_Free?: ${recipe.gluten_free} </p>
-  //   <p> Favorite Recipe?: ${recipe.favorite_recipe} </p>
-  //   <p> Add To Shopping List?: ${recipe.add_to_shopping_list}
-  //   `);
-  //   recipeDetails.append(recipeName, detailsDiv, imageDiv);
-  //   console.log(imageRender(`${this.id}`));
-  //   // recipeDetails.attr('data-post', JSON.stringify(recipe));
-  //   return recipeDetails + imageDiv;
-  // }
+  // const imageRender = async (req, res) => {
+  //   try {
+  //     const recipes = await Recipe.findAll({
+  //       include: [
+  //         {
+  //           model: Recipe,
+  //           as: 'Images'
+  //         }
+  //       ]
+  //     })
+  //       .then(recipes => {
+  //         recipes.map(recipe => {
+  //           const recipeImage = recipe.imageData.toString('base64')
+  //           recipe['data'] = recipeImage
+  //         });
+  //         return recipes;
+  //       })
+  //       .then(recipes => {
+  //         return res.status(200).json({ recipes: recipes });
+  //       });
+  //   } catch (error) {
+  //     return res.status(500).send(error.message);
+  //   }
+  // };
 });
