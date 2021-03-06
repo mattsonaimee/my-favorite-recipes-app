@@ -83,7 +83,7 @@ $(function () {
           detailsDiv.html(`
           <p> Ingredients: ${recipe.ingredients} </p>
           <p> Directions: ${recipe.directions} </p>
-          <p> URL: <a href='https://${recipe.URL}'>${recipe.URL}</a> </p>
+          <p> URL: <a href='https://${recipe.URL}' target='_blank'>${recipe.URL}</a> </p>
           <p> Vegetarian?: ${recipe.vegetarian} </p>
           <p> Vegan?: ${recipe.vegan} </p>
           <p> Gluten_Free?: ${recipe.gluten_free} </p>
@@ -121,21 +121,21 @@ $(function () {
 
     // Delete button
     const deleteButton = $('<button>')
-      .addClass('delete')
+      .addClass('delete btn btn-outline-secondary')
       .attr('value', recipe.id)
       .text('DELETE');
     deleteButton.on('click', handleRecipeDelete);
 
     // Edit button
     const editButton = $('<button>')
-      .addClass('edit')
+      .addClass('edit btn btn-outline-secondary')
       .attr('value', recipe.id)
       .text('EDIT');
     editButton.on('click', handleRecipeEdit);
 
     // View button
     const viewButton = $('<button>')
-      .addClass('view')
+      .addClass('view btn btn-outline-secondary')
       .attr('value', recipe.id)
       .text('VIEW');
     viewButton.on('click', handleRecipeView);
