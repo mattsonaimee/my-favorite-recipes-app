@@ -65,9 +65,9 @@ $(function () {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        const TYPED_ARRAY = new Uint8Array(data.Images[0].data.data);
-        const STRING_CHAR = String.fromCharCode.apply(null, TYPED_ARRAY);
-        const base64String = btoa(STRING_CHAR);
+        // const TYPED_ARRAY = new Uint8Array(data.Images[0].data.data);
+        // const STRING_CHAR = String.fromCharCode.apply(null, TYPED_ARRAY);
+        // const base64String = btoa(STRING_CHAR);
         // var b64encoded = btoa(String.fromCharCode.apply(null, data.Images[0].data.data));
         // console.log(b64encoded);
         // const imageString = data.Images[0].data.data.toString('base64');
@@ -92,11 +92,11 @@ $(function () {
           `);
           recipeDetails.append(recipeName, detailsDiv, imageDiv);
           // const image = $('<img>').attr('src', 'data:image/*;base64, ' + base64String)
-          const image = new Image();
-          image.src = URL.createObjectURL(base64String)
-          const imageSRC = image.prop('src');
-          console.log(imageSRC);
-          imageDiv.append(image);
+          // const image = new Image();
+          // image.src = URL.createObjectURL(base64String)
+          // const imageSRC = image.prop('src');
+          // console.log(imageSRC);
+          // imageDiv.append(image);
           return recipeDetails + imageDiv;
         }
         generatePreview(data);
